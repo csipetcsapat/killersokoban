@@ -24,8 +24,18 @@ public class Worker extends Thing {
 
 	@Override
 	public boolean InteractBox(Directions d) {
-		// TODO Auto-generated method stub
-		return false;
+		Field currentField = GetField();
+		Field nextField = currentField.GetNeighbour(d);
+		Thing thing = nextField.GetThing();
+		
+		if (thing != null) {
+			Destroy();
+		} else {
+			currentField.SetThing(null);
+			nextField.SetThing(this);
+		}
+		
+		return true;
 	}
 
 }
