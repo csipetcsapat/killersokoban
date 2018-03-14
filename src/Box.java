@@ -14,8 +14,7 @@ public class Box extends Thing {
 
 	@Override
 	public boolean InteractWorker(Directions d) {
-		// TODO Auto-generated method stub
-		return false;
+		return InteractBox(d);
 	}
 
 	@Override
