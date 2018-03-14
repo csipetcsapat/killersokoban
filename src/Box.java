@@ -19,7 +19,13 @@ public class Box extends Thing {
 
 	@Override
 	public boolean Movable(Directions d) {
-		// TODO Auto-generated method stub
+		Field currentField = GetField();
+		Field nextField = currentField.GetNeighbour(d);
+		Thing thing = nextField.GetThing();
+		
+		if (thing == null || thing.Movable(d))
+			return true;
+		
 		return false;
 	}
 
