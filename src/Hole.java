@@ -18,5 +18,6 @@ public class Hole extends Field {
     public void Toggle()
     {
         open = !open;
+        this.SetThing(super.GetThing());
     }
 }
