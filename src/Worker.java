@@ -7,8 +7,7 @@ public class Worker extends Thing {
 
 	@Override
 	public void Destroy() {
-		// TODO Auto-generated method stub
-
+		GetField().SetThing(null);
 	}
 
 	@Override
