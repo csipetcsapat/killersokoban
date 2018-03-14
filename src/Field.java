@@ -1,6 +1,6 @@
 public class Field {
-    Thing thing;
-    Field[] neighbours= new Field[4];
+    private Thing thing;
+    private Field[] neighbours= new Field[4];
 
     public Field(){}
 
