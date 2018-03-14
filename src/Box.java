@@ -25,8 +25,21 @@ public class Box extends Thing {
 
 	@Override
 	public boolean InteractBox(Directions d) {
-		// TODO Auto-generated method stub
+		Field currentField = GetField();
+		Field nextField = currentField.GetNeighbour(d);
+		Thing thing = nextField.GetThing();
+		
+		if (thing == null || thing.InteractBox(d)) {
+			currentField.Operate();
+			currentField.SetThing(null);
+			nextField.SetThing(this);
+			nextField.Operate();
+			
+			this.SetField(nextField);
+			
+			return true;
+		}
+		
 		return false;
 	}
-
 }
