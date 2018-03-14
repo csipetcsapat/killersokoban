@@ -6,22 +6,27 @@ public class Field {
 
     public void SetThing(Thing t)
     {
-
+        thing = t;
     }
 
     public Field GetNeighbour(Directions d)
     {
-
+        return neighbours[d.ordinal()];
     }
 
     public Thing GetThing()
     {
-
+        return thing;
     }
 
     public void Operate()
     {
 
+    }
+
+    public void SetNeighbour(Directions d,Field f)
+    {
+        neighbours[d.ordinal()]=f;
     }
 
 }
