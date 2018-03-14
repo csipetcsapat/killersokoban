@@ -9,6 +9,10 @@ public abstract class Thing {
 	public abstract void Destroy();
 	public abstract boolean InteractWorker(Directions d);
 	
+	public void SetField(Field field) {
+		this.field = field;
+	}
+	
 	public Field GetField() {
 		return field;
 	}
