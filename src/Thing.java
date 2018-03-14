@@ -2,6 +2,10 @@
 public abstract class Thing {
 	private Field field;
 	
+	Thing(Field field) {
+		this.field = field;
+	}
+	
 	public abstract void Destroy();
 	public abstract boolean InteractWorker(Directions d);
 	
