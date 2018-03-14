@@ -9,13 +9,13 @@ public class Logger {
 			System.out.print('\t');
 	}
 	
-	public void call(String function) {
-		callStack.push(function);
+	public void call(String className, String objectName, String functionPrototype) {
+		callStack.push(className + " " + objectName + ": " + functionPrototype);
 		System.out.print("->");
 		
 		indent(indentLevel++);
 		
-		System.out.println(function);
+		System.out.println(callStack.peek());
 	}
 	
 	public void endCall() {

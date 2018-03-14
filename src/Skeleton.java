@@ -4,10 +4,10 @@ public class Skeleton {
 	public static void main(String[] args) {
 		Logger log = new Logger();
 		
-		log.call("test1()");
-		log.call("test2()");
-		log.call("test3()");
-		log.call("test4()");
+		log.call("Test", "t1", "test()");
+		log.call("Test", "t1", "test()");
+		log.call("Test", "t1", "test()");
+		log.call("Test", "t1", "test()");
 		
 		log.endCall();
 		log.endCall();
