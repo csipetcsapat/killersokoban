@@ -18,8 +18,7 @@ public class Worker extends Thing {
 
 	@Override
 	public boolean Movable(Directions d) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
