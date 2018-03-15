@@ -9,8 +9,10 @@ public class Logger {
 			System.out.print('\t');
 	}
 	
-	public void call(String className, String objectName, String functionPrototype) {
-		callStack.push(className + " " + objectName + ": " + functionPrototype);
+	public void call(Object obj) {
+		callStack.push(obj.getClass().getName() + ": " +
+	Thread.currentThread().getStackTrace()[2].getMethodName() + "()");
+		
 		System.out.print("->");
 		
 		indent(indentLevel++);
