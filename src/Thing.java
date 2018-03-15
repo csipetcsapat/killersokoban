@@ -10,10 +10,16 @@ public abstract class Thing {
 	public abstract boolean InteractWorker(Directions d);
 	
 	public void SetField(Field field) {
+		Skeleton.log.call(this);
+		
 		this.field = field;
+		
+		Skeleton.log.endCall();
 	}
 	
 	public Field GetField() {
+		Skeleton.log.call(this);
+		Skeleton.log.endCall();
 		return field;
 	}
 	
