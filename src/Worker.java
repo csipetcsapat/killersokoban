@@ -6,6 +6,8 @@ public class Worker extends Thing {
 	}
 	
 	public boolean Move(Directions d) {
+		Skeleton.log.call(this);
+		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
 		Thing t = nextField.GetThing();
@@ -14,30 +16,44 @@ public class Worker extends Thing {
 			currentField.SetThing(null);
 			nextField.SetThing(this);
 			SetField(nextField);
-
+			
+			Skeleton.log.endCall();
 			return true;
 		}
 		
+		Skeleton.log.endCall();
 		return false;
 	}
 
 	@Override
 	public void Destroy() {
+		Skeleton.log.call(this);
+		
 		GetField().SetThing(null);
+		
+		Skeleton.log.endCall();
 	}
 
 	@Override
 	public boolean InteractWorker(Directions d) {
+		Skeleton.log.call(this);
+		Skeleton.log.endCall();
+		
 		return false;
 	}
 
 	@Override
 	public boolean Movable(Directions d) {
+		Skeleton.log.call(this);
+		Skeleton.log.endCall();
+		
 		return true;
 	}
 
 	@Override
 	public boolean InteractBox(Directions d) {
+		Skeleton.log.call(this);
+		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
 		Thing thing = nextField.GetThing();
@@ -47,8 +63,10 @@ public class Worker extends Thing {
 		} else {
 			currentField.SetThing(null);
 			nextField.SetThing(this);
+			SetField(nextField);
 		}
 		
+		Skeleton.log.endCall();
 		return true;
 	}
 
