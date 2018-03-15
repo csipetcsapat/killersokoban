@@ -13,7 +13,6 @@ public class Goal extends Field {
 
     public void Operate()
     {
-        Worker w=gameManager.GetCurrentPlayer();
-        w.AddScore;
+        //Skeleton.gm.getCurrentPlayer().AddScore();
     }
 }
