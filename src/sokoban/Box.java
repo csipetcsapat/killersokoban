@@ -2,28 +2,28 @@ package sokoban;
 
 public class Box extends Thing {
 
-	Box(Field field) {
-		super(field);
+	Box(String objName, Field field) {
+		super(objName, field);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void Destroy() {
-		Skeleton.log.call();
+		Skeleton.log.call(this);
 		
 		GetField().SetThing(null);
 	}
 
 	@Override
 	public boolean InteractWorker(Directions d) {
-		Skeleton.log.call();
+		Skeleton.log.call(this);
 		
 		return InteractBox(d);
 	}
 
 	@Override
 	public boolean Movable(Directions d) {
-		Skeleton.log.call();
+		Skeleton.log.call(this);
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
@@ -37,7 +37,7 @@ public class Box extends Thing {
 
 	@Override
 	public boolean InteractBox(Directions d) {
-		Skeleton.log.call();
+		Skeleton.log.call(this);
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);

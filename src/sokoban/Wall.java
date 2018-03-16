@@ -2,8 +2,8 @@ package sokoban;
 
 public class Wall extends Thing {
 
-	Wall(Field field) {
-		super(field);
+	Wall(String objName, Field field) {
+		super(objName, field);
 	}
 
 	@Override

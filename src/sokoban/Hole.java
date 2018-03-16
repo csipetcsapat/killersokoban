@@ -2,9 +2,9 @@ package sokoban;
 public class Hole extends Field {
     private boolean open;
 
-    public Hole()
+    public Hole(String objName)
     {
-        super();
+        super(objName);
         open = false;
     }
 

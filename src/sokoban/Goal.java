@@ -1,6 +1,10 @@
 package sokoban;
 public class Goal extends Field {
-    private Worker scoreOwner;
+    public Goal(String objName) {
+		super(objName);
+	}
+
+	private Worker scoreOwner;
 
     public void SetThing(Thing t)
     {

@@ -44,14 +44,14 @@ public class Logger {
 		callQueue.clear();
 	}
 	
-	public void call() {
+	public void call(Loggable obj) {
 		StackTraceElement[] st = Thread.currentThread().getStackTrace();
 		
 		if (callQueue.isEmpty())
 			zeroDepth = st.length;
 
 		callQueue.add(
-				new FunctionCall(st[2].getClassName() + ": " + st[2].getMethodName() + "()",
+				new FunctionCall(obj.getClass().getSimpleName() + " " + obj.GetObjName() + ": " + st[2].getMethodName() + "()",
 						st.length - zeroDepth));
 	}
 	

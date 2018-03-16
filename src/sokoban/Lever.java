@@ -2,9 +2,9 @@ package sokoban;
 public class Lever extends Field {
     private Hole hole;
 
-    public Lever()
+    public Lever(String objName)
     {
-      super();
+      super(objName);
     }
 
     public void Operate()
