@@ -1,30 +1,80 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Logger {
-	private int indentLevel = 0;
-	private Stack<String> callStack = new Stack<>();
+	private class FunctionCall {
+		private String callDescription;
+		private int depth;
+		
+		public FunctionCall(String callDescription, int depth) {
+			this.callDescription = callDescription;
+			this.depth = depth;
+		}
+		
+		public int getDepth() {
+			return depth;
+		}
+		
+		public void print(boolean isReturning) {
+			indent(depth);
+			
+			if(isReturning)
+				System.out.print("<--");
+			else
+				System.out.print("-->");
+			
+			System.out.println(callDescription);
+			
+			if (isReturning)
+				System.out.println();
+		}
+	}
+
+	private Queue<FunctionCall> callQueue = new ArrayDeque<>();
+	private int zeroDepth = 0;
 	
 	private void indent(int indentLevel) {
 		for (int i = 0; i < indentLevel; ++i)
 			System.out.print('\t');
 	}
 	
-	public void call(Object obj) {
-		callStack.push(obj.getClass().getName() + ": " +
-	Thread.currentThread().getStackTrace()[2].getMethodName() + "()");
-		
-		System.out.print("->");
-		
-		indent(indentLevel++);
-		
-		System.out.println(callStack.peek());
+	public void reset() {
+		callQueue.clear();
 	}
 	
-	public void endCall() {
-		System.out.print("<-");
+	public void call() {
+		StackTraceElement[] st = Thread.currentThread().getStackTrace();
 		
-		indent(--indentLevel);
+		if (callQueue.isEmpty())
+			zeroDepth = st.length;
+
+		callQueue.add(
+				new FunctionCall(st[2].getClassName() + ": " + st[2].getMethodName() + "()",
+						st.length - zeroDepth));
+	}
+	
+	public void printCallStack() {
+		int lastDepth = -1;
+		Stack<FunctionCall> callStack = new Stack<>();
 		
-		System.out.println(callStack.pop());
+		while (!callQueue.isEmpty()) {
+			FunctionCall fc = callQueue.poll();
+			int depth = fc.getDepth();
+			
+			if (depth <= lastDepth) {
+				for (int i = 0; i < lastDepth - depth + 1; ++i)
+					callStack.pop().print(true);
+			}
+			
+			callStack.add(fc);
+			
+			fc.print(false);
+			
+			lastDepth = depth;
+		}
+		
+		while (!callStack.isEmpty())
+			callStack.pop().print(true);
 	}
 }
