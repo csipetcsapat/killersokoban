@@ -15,6 +15,8 @@ public class Skeleton {
 		Box b = new Box(f2);
 		f2.SetThing(b);
 		w.Move(Directions.RIGHT);
+		
+		log.printCallStack();
 	}
 
 }

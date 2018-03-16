@@ -6,42 +6,35 @@ public class Field {
 
     public void SetThing(Thing t)
     {
-    	Skeleton.log.call(this);
+    	Skeleton.log.call();
     	
         thing = t;
-        
-        Skeleton.log.endCall();
     }
 
     public Field GetNeighbour(Directions d)
     {
-    	Skeleton.log.call(this);
-    	Skeleton.log.endCall();
+    	Skeleton.log.call();
     	
         return neighbours[d.ordinal()];
     }
 
     public Thing GetThing()
     {
-    	Skeleton.log.call(this);
-    	Skeleton.log.endCall();
-    
+    	Skeleton.log.call();
+    	
         return thing;
     }
 
     public void Operate()
     {
-    	Skeleton.log.call(this);
-    	Skeleton.log.endCall();
+    	Skeleton.log.call();
     }
 
     public void SetNeighbour(Directions d,Field f)
     {
-    	Skeleton.log.call(this);
+    	Skeleton.log.call();
     	
         neighbours[d.ordinal()]=f;
-        
-        Skeleton.log.endCall();
     }
 
 }

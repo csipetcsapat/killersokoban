@@ -8,41 +8,35 @@ public class Box extends Thing {
 
 	@Override
 	public void Destroy() {
-		Skeleton.log.call(this);
+		Skeleton.log.call();
 		
 		GetField().SetThing(null);
-		
-		Skeleton.log.endCall();
 	}
 
 	@Override
 	public boolean InteractWorker(Directions d) {
-		Skeleton.log.call(this);
-		Skeleton.log.endCall();
+		Skeleton.log.call();
 		
 		return InteractBox(d);
 	}
 
 	@Override
 	public boolean Movable(Directions d) {
-		Skeleton.log.call(this);
+		Skeleton.log.call();
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
 		Thing thing = nextField.GetThing();
 		
-		if (thing == null || thing.Movable(d)) {
-			Skeleton.log.endCall();
+		if (thing == null || thing.Movable(d))
 			return true;
-		}
 		
-		Skeleton.log.endCall();
 		return false;
 	}
 
 	@Override
 	public boolean InteractBox(Directions d) {
-		Skeleton.log.call(this);
+		Skeleton.log.call();
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
@@ -56,11 +50,9 @@ public class Box extends Thing {
 			
 			this.SetField(nextField);
 			
-			Skeleton.log.endCall();
 			return true;
 		}
 		
-		Skeleton.log.endCall();
 		return false;
 	}
 }
