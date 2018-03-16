@@ -1,3 +1,4 @@
+package sokoban;
 public class Goal extends Field {
     private Worker scoreOwner;
 

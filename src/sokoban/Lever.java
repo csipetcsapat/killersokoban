@@ -1,3 +1,4 @@
+package sokoban;
 public class Lever extends Field {
     private Hole hole;
 

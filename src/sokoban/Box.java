@@ -1,26 +1,10 @@
+package sokoban;
 
-public class Worker extends Thing {
+public class Box extends Thing {
 
-	Worker(Field field) {
+	Box(Field field) {
 		super(field);
-	}
-	
-	public boolean Move(Directions d) {
-		Skeleton.log.call();
-		
-		Field currentField = GetField();
-		Field nextField = currentField.GetNeighbour(d);
-		Thing t = nextField.GetThing();
-		
-		if (t == null || t.InteractWorker(d)) {
-			currentField.SetThing(null);
-			nextField.SetThing(this);
-			SetField(nextField);
-
-			return true;
-		}
-		
-		return false;
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -34,14 +18,21 @@ public class Worker extends Thing {
 	public boolean InteractWorker(Directions d) {
 		Skeleton.log.call();
 		
-		return false;
+		return InteractBox(d);
 	}
 
 	@Override
 	public boolean Movable(Directions d) {
 		Skeleton.log.call();
 		
-		return true;
+		Field currentField = GetField();
+		Field nextField = currentField.GetNeighbour(d);
+		Thing thing = nextField.GetThing();
+		
+		if (thing == null || thing.Movable(d))
+			return true;
+		
+		return false;
 	}
 
 	@Override
@@ -52,14 +43,17 @@ public class Worker extends Thing {
 		Field nextField = currentField.GetNeighbour(d);
 		Thing thing = nextField.GetThing();
 		
-		if (thing != null) {
-			Destroy();
-		} else {
+		if (thing == null || thing.InteractBox(d)) {
+			currentField.Operate();
 			currentField.SetThing(null);
 			nextField.SetThing(this);
+			nextField.Operate();
+			
+			this.SetField(nextField);
+			
+			return true;
 		}
 		
-		return true;
+		return false;
 	}
-
 }

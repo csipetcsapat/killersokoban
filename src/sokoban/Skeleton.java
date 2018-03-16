@@ -1,3 +1,4 @@
+package sokoban;
 
 public class Skeleton {
 	public static final GameManager gm = new GameManager();

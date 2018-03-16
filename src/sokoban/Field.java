@@ -1,3 +1,4 @@
+package sokoban;
 public class Field {
     private Thing thing;
     private Field[] neighbours= new Field[4];
