@@ -3,7 +3,7 @@ public class Skeleton {
 	public static final GameManager gm = new GameManager();
 	public static final Logger log = new Logger();
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
 		Field f1 = new Field();
 		Field f2 = new Field();
 		Field f3 = new Field();
