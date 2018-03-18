@@ -9,6 +9,20 @@ import sokoban.*;
 public class Skeleton {
 	public static final GameManager gm = new GameManager("gm");
 	public static final Logger log = new Logger();
+	
+	private static boolean askInput() {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String input = null;
+		
+		try {
+			input = reader.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return input.toLowerCase().equals("y");
+	}
 
 	public static void main(String[] args) {
 //		Field f1 = new Field("f1");
@@ -24,7 +38,6 @@ public class Skeleton {
 //		w.Move(Directions.RIGHT);
 		Test test = null;
 		String input;
-		boolean isOpen;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Welcome to the Skeleton program of Csipet-csapat !");
 		
@@ -59,36 +72,18 @@ public class Skeleton {
 				break;
 			case "2":  
 				System.out.println("Is hole open? Y/N");
-				input = reader.readLine();
-				if(input.equals("Y"))
-					isOpen = true;
-				else if(input.equals("N"))
-					isOpen = false;
-				else break;
-				test = new StepHole(isOpen);
+				test = new StepHole(askInput());
 				break;
 			case "3":  
 				test = new PushBoxEmpty();
 				break;
 			case "4":  
 				System.out.println("Is hole open? Y/N");
-				input = reader.readLine();
-				if(input.equals("Y"))
-					isOpen = true;
-				else if(input.equals("N"))
-					isOpen = false;
-				else break;
-				test = new PushBoxHole(isOpen);
+				test = new PushBoxHole(askInput());
 				break;
 			case "5": 
 				System.out.println("Is hole field empty Y/N");
-				input = reader.readLine();
-				if(input.equals("Y"))
-					isOpen = true;
-				else if(input.equals("N"))
-					isOpen = false;
-				else break;
-				test = new PushBoxLever(isOpen);
+				test = new PushBoxLever(askInput());
 				break;
 			case "6":  
 				test = new PushBoxGoal();
