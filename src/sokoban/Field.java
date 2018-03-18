@@ -14,7 +14,6 @@ public class Field implements Loggable {
     public void SetThing(Thing t)
     {
     	Skeleton.log.call(this);
-    	
         thing = t;
     }
 

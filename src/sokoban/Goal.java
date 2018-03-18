@@ -1,4 +1,7 @@
 package sokoban;
+
+import test.Skeleton;
+
 public class Goal extends Field {
     public Goal(String objName) {
 		super(objName);
@@ -13,11 +16,13 @@ public class Goal extends Field {
 
     public Worker GetScoreOwner()
     {
+    	Skeleton.log.call(this);
         return scoreOwner;
     }
 
     public void Operate()
     {
+    	Skeleton.log.call(this);
         //Skeleton.gm.getCurrentPlayer().AddScore();
     }
 }

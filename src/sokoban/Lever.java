@@ -1,4 +1,7 @@
 package sokoban;
+
+import test.Skeleton;
+
 public class Lever extends Field {
     private Hole hole;
 
@@ -9,11 +12,13 @@ public class Lever extends Field {
 
     public void Operate()
     {
+    	Skeleton.log.call(this);
         hole.Toggle();
     }
 
     public void SetHole(Hole h)
     {
+    	Skeleton.log.call(this);
         hole=h;
     }
 }

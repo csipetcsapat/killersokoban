@@ -8,12 +8,13 @@ public class PushBoxHole implements Test {
 	Worker w1;
 	Box b1;
 	
-	PushBoxHole () {
+	PushBoxHole (Boolean open) {
 		
 		f1 = new Field("f1");
 		f2 = new Field("f2");
 		h1 = new Hole("h1");
-		
+		if(open)
+			h1.Toggle();
 		
 		
 		w1 = new Worker("w1", f1);

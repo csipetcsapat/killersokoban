@@ -24,6 +24,7 @@ public class Skeleton {
 //		w.Move(Directions.RIGHT);
 		Test test = null;
 		String input = "";
+		Boolean isOpen = null;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Welcome to the Skeleton program of Csipet-csapat !");
 		
@@ -52,22 +53,32 @@ public class Skeleton {
 			
 			try {
 				input = reader.readLine();
-			} catch (IOException e) {
-				System.out.println("Reading Error"); 
-			}
-			
 			switch (input) {
 			case "1":  
 				test = new StepEmpty();
 				break;
 			case "2":  
-				test = new StepHole();
+				System.out.println("Is hole open? Y/N");
+				input = reader.readLine();
+				if(input.equals("Y"))
+					isOpen = true;
+				else if(input.equals("N"))
+					isOpen = false;
+				else break;
+				test = new StepHole(isOpen);
 				break;
 			case "3":  
 				test = new PushBoxEmpty();
 				break;
 			case "4":  
-				test = new PushBoxHole();
+				System.out.println("Is hole open? Y/N");
+				input = reader.readLine();
+				if(input.equals("Y"))
+					isOpen = true;
+				else if(input.equals("N"))
+					isOpen = false;
+				else break;
+				test = new PushBoxHole(isOpen);
 				break;
 			case "5":  
 				test = new PushBoxLever();
@@ -102,8 +113,12 @@ public class Skeleton {
 			case "e":  
 				return;
 			default: 
-				System.out.println("Unknown option, please try again..."); 			
+				System.out.println("Unknown option, please try again...");
+				break;
 			}	
+			} catch (IOException e) {
+				System.out.println("Reading Error"); 
+			}
 			
 			if (test != null) {
 				test.Run();

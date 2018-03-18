@@ -1,5 +1,7 @@
 package sokoban;
 
+import test.Skeleton;
+
 public class Wall extends Thing {
 
 	public Wall(String objName, Field field) {
@@ -14,16 +16,19 @@ public class Wall extends Thing {
 
 	@Override
 	public boolean InteractWorker(Directions d) {
+		Skeleton.log.call(this);
 		return false;
 	}
 
 	@Override
 	public boolean Movable(Directions d) {
+		Skeleton.log.call(this);
 		return false;
 	}
 
 	@Override
 	public boolean InteractBox(Directions d) {
+		Skeleton.log.call(this);
 		return false;
 	}
 

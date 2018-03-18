@@ -4,16 +4,17 @@ import sokoban.*;
 
 public class StepHole implements Test {
 	
-	Field f1, h1;	
+	Field f1;
+	Hole h1;
 	Worker w1;
 	
 	
-	StepHole () {
+	StepHole (Boolean open) {
 		
 		f1 = new Field("f1");
 		h1 = new Hole("h1");
-		
-		
+		if(open)
+		h1.Toggle();
 		
 		
 		w1 = new Worker("w1", f1);

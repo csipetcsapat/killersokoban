@@ -1,4 +1,7 @@
 package sokoban;
+
+import test.Skeleton;
+
 public class Hole extends Field {
     private boolean open;
 
@@ -10,7 +13,8 @@ public class Hole extends Field {
 
     public void SetThing(Thing t)
     {
-        if(open)
+    	Skeleton.log.call(this);
+        if(open && t != null)
         {
             t.Destroy();
         }else super.SetThing(t);
