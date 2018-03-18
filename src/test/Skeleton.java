@@ -23,8 +23,8 @@ public class Skeleton {
 //		f2.SetThing(b);
 //		w.Move(Directions.RIGHT);
 		Test test = null;
-		String input = "";
-		Boolean isOpen = null;
+		String input;
+		boolean isOpen;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Welcome to the Skeleton program of Csipet-csapat !");
 		
