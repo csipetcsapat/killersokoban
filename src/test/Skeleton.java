@@ -128,6 +128,7 @@ public class Skeleton {
 			}
 			
 			if (test != null) {
+				log.reset();
 				test.Run();
 				log.printCallStack();
 			}

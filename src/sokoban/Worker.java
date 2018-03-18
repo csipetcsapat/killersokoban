@@ -20,7 +20,9 @@ public class Worker extends Thing {
 		if (t == null || t.InteractWorker(d)) {
 			currentField.SetThing(null);
 			nextField.SetThing(this);
-			SetField(nextField);
+			
+			if (nextField.GetThing() != null)
+				SetField(nextField);
 
 			return true;
 		}
@@ -37,6 +39,7 @@ public class Worker extends Thing {
 		Skeleton.log.call(this);
 		
 		GetField().SetThing(null);
+		SetField(null);
 	}
 
 	@Override
@@ -66,6 +69,9 @@ public class Worker extends Thing {
 		} else {
 			currentField.SetThing(null);
 			nextField.SetThing(this);
+			
+			if (nextField.GetThing() != null)
+				SetField(nextField);
 		}
 		
 		return true;

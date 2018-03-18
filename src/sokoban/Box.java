@@ -14,6 +14,7 @@ public class Box extends Thing {
 		Skeleton.log.call(this);
 		
 		GetField().SetThing(null);
+		SetField(null);
 	}
 
 	@Override
@@ -51,7 +52,8 @@ public class Box extends Thing {
 			nextField.SetThing(this);
 			nextField.Operate();
 			
-			this.SetField(nextField);
+			if (nextField.GetThing() != null)
+				this.SetField(nextField);
 			
 			return true;
 		}
