@@ -13,6 +13,7 @@ public class Hole extends Field {
 
     public void SetThing(Thing t)
     {
+    	Skeleton.log.call(this);
         if(open && t != null)
         {
             t.Destroy();

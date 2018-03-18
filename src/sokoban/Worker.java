@@ -3,7 +3,9 @@ package sokoban;
 import test.Skeleton;
 
 public class Worker extends Thing {
-
+	
+	private int score;
+	
 	public Worker(String objName, Field field) {
 		super(objName, field);
 	}
@@ -24,6 +26,10 @@ public class Worker extends Thing {
 		}
 		
 		return false;
+	}
+	
+	public void AddScore() {
+		++score;
 	}
 
 	@Override

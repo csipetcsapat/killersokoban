@@ -9,7 +9,7 @@ public class PushBoxLever implements Test {
 	Box b1;
 	Hole h1;
 	
-	PushBoxLever () {
+	PushBoxLever (Boolean open) {
 		
 		f1 = new Field("f1");
 		f2 = new Field("f2");
@@ -29,7 +29,7 @@ public class PushBoxLever implements Test {
 		f1.SetThing(w1);
 		f2.SetThing(b1);
 		l1.SetHole(h1);
-		
+		if(!open)
 		h1.SetThing(b1); /// lever csak akkor mukodik ha van rajta cucc
 		
 			

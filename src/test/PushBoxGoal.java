@@ -13,9 +13,8 @@ public class PushBoxGoal implements Test {
 		f1 = new Field("f1");
 		f2 = new Field("f2");
 		g1 = new Goal("g1");
-		
-		
-		
+				
+
 		w1 = new Worker("w1", f1);
 		b1 = new Box("b1", f2);
 		
@@ -27,7 +26,7 @@ public class PushBoxGoal implements Test {
 		f1.SetThing(w1);
 		f2.SetThing(b1);
 		
-			
+		Skeleton.gm.setCurrentPlayer(w1);	
 	}
 	
 	public void Run() {

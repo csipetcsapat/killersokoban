@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import sokoban.*;
 
 public class Skeleton {
-	public static final GameManager gm = new GameManager();
+	public static final GameManager gm = new GameManager("gm");
 	public static final Logger log = new Logger();
 
 	public static void main(String[] args) {
@@ -80,8 +80,15 @@ public class Skeleton {
 				else break;
 				test = new PushBoxHole(isOpen);
 				break;
-			case "5":  
-				test = new PushBoxLever();
+			case "5": 
+				System.out.println("Is hole field empty Y/N");
+				input = reader.readLine();
+				if(input.equals("Y"))
+					isOpen = true;
+				else if(input.equals("N"))
+					isOpen = false;
+				else break;
+				test = new PushBoxLever(isOpen);
 				break;
 			case "6":  
 				test = new PushBoxGoal();

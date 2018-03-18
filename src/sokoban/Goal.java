@@ -11,6 +11,7 @@ public class Goal extends Field {
 
     public void SetThing(Thing t)
     {
+    	Skeleton.log.call(this);
         super.SetThing(t);
     }
 
@@ -23,6 +24,8 @@ public class Goal extends Field {
     public void Operate()
     {
     	Skeleton.log.call(this);
-        //Skeleton.gm.getCurrentPlayer().AddScore();
+    	Worker w = Skeleton.gm.getCurrentPlayer();
+    	w.AddScore();
+        scoreOwner = w;
     }
 }
