@@ -13,7 +13,6 @@ public class Hole extends Field {
 
     public void SetThing(Thing t)
     {
-    	Skeleton.log.call(this);
         if(open && t != null)
         {
             t.Destroy();
@@ -22,6 +21,7 @@ public class Hole extends Field {
 
     public void Toggle()
     {
+    	Skeleton.log.call(this);
         open = !open;
         this.SetThing(super.GetThing());
     }
