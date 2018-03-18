@@ -2,7 +2,7 @@ package sokoban;
 
 public class Wall extends Thing {
 
-	Wall(String objName, Field field) {
+	public Wall(String objName, Field field) {
 		super(objName, field);
 	}
 

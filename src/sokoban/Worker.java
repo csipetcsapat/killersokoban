@@ -1,8 +1,10 @@
 package sokoban;
 
+import test.Skeleton;
+
 public class Worker extends Thing {
 
-	Worker(String objName, Field field) {
+	public Worker(String objName, Field field) {
 		super(objName, field);
 	}
 	

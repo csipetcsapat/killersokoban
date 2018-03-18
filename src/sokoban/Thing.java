@@ -1,5 +1,7 @@
 package sokoban;
 
+import test.Skeleton;
+
 public abstract class Thing implements Loggable {
 	private Field field;
 	private String objName;

@@ -1,4 +1,7 @@
 package sokoban;
+
+import test.Skeleton;
+
 public class Field implements Loggable {
     private Thing thing;
     private Field[] neighbours= new Field[4];

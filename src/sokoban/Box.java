@@ -1,8 +1,10 @@
 package sokoban;
 
+import test.Skeleton;
+
 public class Box extends Thing {
 
-	Box(String objName, Field field) {
+	public Box(String objName, Field field) {
 		super(objName, field);
 		// TODO Auto-generated constructor stub
 	}
