@@ -2,14 +2,28 @@ package sokoban;
 
 import test.Skeleton;
 
+/**A játékos által irányított munkást reprezentáló osztály.
+A ládákat el tudja tolni.
+Ha másik játékos ládát tol rá és nem tud kitérni meghal.
+Közvetlenül másik játékos nem tudja megmozdítani.
+ **/
 public class Worker extends Thing {
 	
 	private int score;
-	
+
+	/**
+	 * konstruktor
+	 * @param objName az objektum neve
+	 * @param field erre a fieldre kerül az objektum
+	 */
 	public Worker(String objName, Field field) {
 		super(objName, field);
 	}
-	
+
+	/**
+	 * @param d ebbe az irányba léptetjük a játékost
+	 * @return visszaadja a léptetés sikerességét
+	 */
 	public boolean Move(Directions d) {
 		Skeleton.log.call(this);
 		
@@ -29,11 +43,17 @@ public class Worker extends Thing {
 		
 		return false;
 	}
-	
+
+	/**
+	 * növeli a játékos pontjainak számát 1-gyel
+	 */
 	public void AddScore() {
 		++score;
 	}
 
+	/**
+	 * törli a játékost a játéktérről
+	 */
 	@Override
 	public void Destroy() {
 		Skeleton.log.call(this);
@@ -42,6 +62,10 @@ public class Worker extends Thing {
 		SetField(null);
 	}
 
+	/**
+	 * @param d ebbe az irányba akarja tolni egy másik játékos
+	 * @return mindig false-al tér vissza, játékos játékost közvetlenül nem tolhat
+	 */
 	@Override
 	public boolean InteractWorker(Directions d) {
 		Skeleton.log.call(this);
@@ -49,6 +73,10 @@ public class Worker extends Thing {
 		return false;
 	}
 
+	/**
+	 * @param d ebbe az irányba tolnák
+	 * @return mindig true-val tér vissza
+	 */
 	@Override
 	public boolean Movable(Directions d) {
 		Skeleton.log.call(this);
@@ -56,6 +84,11 @@ public class Worker extends Thing {
 		return true;
 	}
 
+	/**
+	 * @param d ebbe az irányba tolnák
+	 * @return mindig true-val tér vissza, de ha az adott d irányban van mellette valami megsemmisül,
+	 * ellenkező esetben átlép arra a fieldre
+	 */
 	@Override
 	public boolean InteractBox(Directions d) {
 		Skeleton.log.call(this);
