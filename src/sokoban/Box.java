@@ -5,7 +5,7 @@ import test.Skeleton;
 /**A játékbeli ládák reprezentálása. 1 mezőnyi helyet foglal a játéktéren.
 Ha tolják akkor arrébb mozdul amennyiben bizonyos feltételek teljesülnek.
 Ha az összes még mozgatható láda a célzónákra kerül a a játék véget ér.
-**/
+*/
 public class Box extends Thing {
 
 	/**

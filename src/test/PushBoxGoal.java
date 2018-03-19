@@ -1,6 +1,11 @@
 package test;
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy box-ot rátulunk egy goal-ra
+ * elvárt kimenet: a box rákerül a goal-ra, majd az set-eli
+ */
+
 public class PushBoxGoal implements Test {
 	
 	Field f1, f2;

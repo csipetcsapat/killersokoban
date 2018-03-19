@@ -3,7 +3,7 @@ package sokoban;
 import test.Skeleton;
 /**A játéktér mezőit reprezentáló osztály.
 Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat”.
-**/
+*/
 
 
 public class Field implements Loggable {

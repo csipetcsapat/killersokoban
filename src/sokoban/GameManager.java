@@ -5,7 +5,7 @@ import test.Skeleton;
 /**A játék alapvető vezérléséért felel, azaz betölti a pályát,
 inicializálja  játékteret, ellenőrzi hogy a játék véget ért-e,
 illetve nyertest hirdet ha igen.
-**/
+*/
 public class GameManager  implements Loggable {
 	private Worker currentPlayer;
 	private String objName;

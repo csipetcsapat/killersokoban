@@ -2,6 +2,11 @@ package test;
 
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy boxot tolunk, ami mögött egy player van, ami mögött egy üres field található
+ * elvárt kimenet: a box és a player is az adott irányba elmozdul
+ */
+
 public class PushBoxPlayerEmpty  implements Test {
 	
 	Field f1, f2, f3, f4;

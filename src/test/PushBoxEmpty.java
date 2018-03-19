@@ -1,6 +1,11 @@
 package test;
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy box-ot áttolunk egy mellette álló üres fieldre
+ * elvárt kimenet: a box átkerül az adott field-re
+ */
+
 public class PushBoxEmpty implements Test {
 	
 	Field f1, f2, f3;

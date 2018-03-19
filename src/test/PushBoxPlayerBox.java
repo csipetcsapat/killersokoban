@@ -2,6 +2,11 @@ package test;
 
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy boxot tolunk, ami mögött egy player áll, ami mögött egy box található
+ * elvárt kimenet: az elsőnek megtolt box a player helyére kerül, ami törli magát
+ */
+
 public class PushBoxPlayerBox implements Test {
 	
 	Field f1, f2, f3, f4;

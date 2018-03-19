@@ -2,6 +2,11 @@ package test;
 
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy player tol közvetlenül egy wall-t
+ * elvárt kimenet: minden marad a helyén
+ */
+
 public class PushWall implements Test {
 	
 	Field f1, f2;

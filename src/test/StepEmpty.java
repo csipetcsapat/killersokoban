@@ -2,6 +2,11 @@ package test;
 
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy player egy üres fieldre lép
+ * elvárt kimenet: a player az adott fieldre átkerül
+ */
+
 public class StepEmpty implements Test {
 	
 	Field f1, f2;

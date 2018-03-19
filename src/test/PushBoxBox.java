@@ -1,6 +1,11 @@
 package test;
 import sokoban.*;
 
+/**
+ *ebben a tesztben egy box megtol egy másik box-ot
+ * elvárt működés: mindkét box eltolódik az adott irányba
+ */
+
 public class PushBoxBox implements Test {
 	
 	Field f1, f2, f3, f4;

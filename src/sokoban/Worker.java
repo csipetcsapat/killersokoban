@@ -6,7 +6,7 @@ import test.Skeleton;
 A ládákat el tudja tolni.
 Ha másik játékos ládát tol rá és nem tud kitérni meghal.
 Közvetlenül másik játékos nem tudja megmozdítani.
- **/
+ */
 public class Worker extends Thing {
 	
 	private int score;

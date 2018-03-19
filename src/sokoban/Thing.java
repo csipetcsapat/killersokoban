@@ -3,7 +3,7 @@ package sokoban;
 import test.Skeleton;
 
 /**A mezőkön elhelyezkedő tárgyak absztrakt ősosztálya.
- **/
+ */
 public abstract class Thing implements Loggable {
 	private Field field;
 	private String objName;

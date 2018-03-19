@@ -1,6 +1,11 @@
 package test;
 import sokoban.*;
 
+/**
+ * ebben a tesztben  egy boxot tolunk egy falnak
+ * elvárt kimenet: minden marad az eredeti pozíciójában
+ */
+
 public class PushBoxWall implements Test {
 	
 	Field f1, f2, f3;

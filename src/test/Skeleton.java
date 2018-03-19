@@ -6,6 +6,10 @@ import java.io.InputStreamReader;
 
 import sokoban.*;
 
+/**
+ * tesztesetek lefuttatása
+ */
+
 public class Skeleton {
 	public static final GameManager gm = new GameManager("gm");
 	public static final Logger log = new Logger();

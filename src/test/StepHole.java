@@ -2,6 +2,11 @@ package test;
 
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy player egy hole-ra lép
+ * elvárt kimenet: a player rákerül az adott hole-ra, majd az set-eli
+ */
+
 public class StepHole implements Test {
 	
 	Field f1;

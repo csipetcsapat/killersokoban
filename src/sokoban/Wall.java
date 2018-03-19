@@ -4,7 +4,7 @@ import test.Skeleton;
 
 /**A falat vagy oszlopot reprezentáló osztály,
 egy mezőnyi helyet foglal semmi nem tudja megmozdítani.
- **/
+ */
 public class Wall extends Thing {
 
 	/**

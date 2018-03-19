@@ -1,6 +1,11 @@
 package test;
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy boxot rátolunk egy lever-re
+ * elvárt kimenet: a box rákerül az adott lever-re, majd az set-eli
+ */
+
 public class PushBoxLever implements Test {
 	
 	Field f1, f2;

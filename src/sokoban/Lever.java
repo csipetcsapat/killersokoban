@@ -4,7 +4,7 @@ import test.Skeleton;
 
 /**Kapcsoló, amely egy hozzá tartozó lyukat vezérel.
 Ha láda kerül rá a vonatkozó Hole objektum kinyílik.
- **/
+ */
 public class Lever extends Field {
     private Hole hole;
 

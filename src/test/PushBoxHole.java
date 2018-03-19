@@ -1,6 +1,11 @@
 package test;
 import sokoban.*;
 
+/**
+ * ebben a tesztben a tesztben egy boxot rátolunk egy hole-ra
+ * elvárt kimenet: a box rákerül az adott hole-ra, majd az set-eli
+ */
+
 public class PushBoxHole implements Test {
 	
 	Field f1, f2;

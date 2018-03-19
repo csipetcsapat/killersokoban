@@ -5,7 +5,7 @@ import test.Skeleton;
 /**Speciális mező, a játék célja hogy ezekre a mezőkre kerüljenek a ládák.
 Ha a játék véget ér és ezen a mezőn láda áll akkor azért pont jár
 annak a játékosnak aki idetolta.
-**/
+*/
 public class Goal extends Field {
     public Goal(String objName) {
 		super(objName);

@@ -2,6 +2,11 @@ package test;
 
 import sokoban.*;
 
+/**
+ * ebben a tesztben egy boxot tolunk, ami mögött egy player, ami mögött fal van
+ * elvárt kimenet: a player törli magát, helyére kerül a box
+ */
+
 public class PushBoxPlayerWall implements Test {
 	
 	Field f1, f2, f3, f4;
