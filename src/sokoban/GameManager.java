@@ -1,6 +1,6 @@
 package sokoban;
 
-
+import java.util.ArrayList;
 
 /**A játék alapvető vezérléséért felel, azaz betölti a pályát,
 inicializálja  játékteret, ellenőrzi hogy a játék véget ért-e,
@@ -14,8 +14,8 @@ public class GameManager  implements Loggable {
 	 * konstruktor
 	 * @param objName az objektum neve
 	 */
-	public GameManager(String objName) {
-    	this.objName = objName;
+	public GameManager() {
+    	
     }
 
 	/**
@@ -40,4 +40,10 @@ public class GameManager  implements Loggable {
 	public String GetObjName() {
 		return objName;
 	}
+	
+	public void SetBoxes(ArrayList<Box> boxes) {}
+	
+	public void SetPlayers(ArrayList<Worker> players) {}
+	
+	
 }

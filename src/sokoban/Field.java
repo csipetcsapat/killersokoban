@@ -2,15 +2,15 @@ package sokoban;
 
 
 /**A játéktér mezőit reprezentáló osztály.
-Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat�.
+Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat�.
 */
 
 
 public class Field implements Loggable {
-    private Thing thing;
+    protected Thing thing;
     private Field[] neighbours= new Field[4];
     private String objName;
-    private int roughness;
+    protected int roughness;
 
     /**
      * konstruktor
@@ -18,7 +18,7 @@ public class Field implements Loggable {
      */
     public Field() {
     	
-    	roughness = 10;
+    	roughness = 5;
     }
 
     /**
@@ -84,6 +84,26 @@ public class Field implements Loggable {
      */
 	public String GetObjName() {
 		return objName;
+	}
+	
+	public String toString() {
+		
+		
+		String s = "" + roughness + "F";
+		String thingStr;
+		
+		if (thing != null) {
+			if ((thingStr = thing.toString()) == "#") {
+				s = "#";
+			} else {
+				s += thingStr;
+			}
+			
+		}
+		
+		return s;
+				
+		
 	}
 
 }

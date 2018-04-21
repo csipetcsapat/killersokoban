@@ -44,4 +44,20 @@ public class Hole extends Field {
         open = !open;
         this.SetThing(super.GetThing());
     }
+    public String toString() {
+    	String s = "" + roughness + "H"+ ID;
+		String thingStr;
+		
+		if (thing != null) {
+			if ((thingStr = thing.toString()) == "#") {
+				s = "#";
+			} else {
+				s += thingStr;
+			}
+			
+		}
+		
+		return s;
+		
+	}
 }

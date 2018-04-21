@@ -40,4 +40,21 @@ public class Lever extends Field {
     	
         hole=h;
     }
+    
+    public String toString() {
+    	String s = "" + roughness + "L" + ID;
+		String thingStr;
+		
+		if (thing != null) {
+			if ((thingStr = thing.toString()) == "#") {
+				s = "#";
+			} else {
+				s += thingStr;
+			}
+			
+		}
+		
+		return s;
+		
+	}
 }

@@ -9,15 +9,17 @@ public class Worker extends Thing {
 	
 	private int score;
 	private int force;
+	private int ID;
 
 	/**
 	 * konstruktor
 	 * @param objName az objektum neve
 	 * @param field erre a fieldre kerül az objektum
 	 */
-	public Worker(String objName, Field field, int force) {
-		super(objName, field);
+	public Worker( Field field, int force, int ID) {
+		super( field);
 		this.force = force;
+		this.ID = ID;
 	}
 
 	/**
@@ -57,7 +59,9 @@ public class Worker extends Thing {
 	 */
 	public void ReleaseHoney() {
 		Field currentField = GetField();
-		currentField.SetRoughness(currentField.GetRoughness()+1);
+		currentField.SetRoughness(
+			currentField.GetRoughness() < 9 ? 
+				currentField.GetRoughness() + 1 : 9);
 		
 	}
 	
@@ -132,6 +136,10 @@ public class Worker extends Thing {
 		}
 		
 		return true;
+	}
+	
+	public String toString() {
+		return "P" + ID;
 	}
 
 }

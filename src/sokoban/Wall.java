@@ -12,8 +12,8 @@ public class Wall extends Thing {
 	 * @param objName az objektum neve
 	 * @param field erre a fieldre állítódik be
 	 */
-	public Wall(String objName, Field field) {
-		super(objName, field);
+	public Wall( Field field) {
+		super(field);
 	}
 
 	/**
@@ -53,6 +53,9 @@ public class Wall extends Thing {
 	public boolean InteractBox(Directions d, int f) {
 	
 		return false;
+	}
+	public String toString() {
+		return "#";
 	}
 
 }

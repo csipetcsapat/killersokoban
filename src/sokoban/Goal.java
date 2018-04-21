@@ -46,4 +46,19 @@ public class Goal extends Field {
     	scoreOwner.AddScore();
         
     }
+	public String toString() {
+		String s = "" + roughness + "G";
+		String thingStr;
+		
+		if (thing != null) {
+			if ((thingStr = thing.toString()) == "#") {
+				s = "#";
+			} else {
+				s += thingStr;
+			}
+			
+		}
+		
+		return s;
+	}
 }

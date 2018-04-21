@@ -13,9 +13,9 @@ public abstract class Thing implements Loggable {
 	 * @param objName az objektum neve
 	 * @param field az a field, amelyre a thing kerül
 	 */
-	Thing(String objName, Field field) {
+	Thing(Field field) {
 		this.field = field;
-		this.objName = objName;
+		
 	}
 
 	/**

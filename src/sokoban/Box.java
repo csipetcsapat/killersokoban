@@ -12,8 +12,8 @@ public class Box extends Thing {
 	 * @param objName az objektum neve
 	 * @param field a field, amire kerül
 	 */
-	public Box(String objName, Field field) {
-		super(objName, field);
+	public Box( Field field) {
+		super(field);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -94,5 +94,9 @@ public class Box extends Thing {
 		}
 		
 		return false;
+	}
+	
+	public String toString() {
+		return "B";
 	}
 }

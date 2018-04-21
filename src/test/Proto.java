@@ -11,7 +11,7 @@ import sokoban.*;
  */
 
 public class Proto {
-	public static final GameManager gm = new GameManager("gm");
+	public static final GameManager gm = new GameManager();
 	public static final Logger log = new Logger();
 	
 	private static boolean askInput() {
@@ -31,7 +31,12 @@ public class Proto {
 	public static void main(String[] args) {
 
 		
+		
+		Map map = new Map();
 		 
+		map.LoadMap(1, "test.txt", gm);
+		
+		map.PrintMap();
 		
 		return ;
 		
