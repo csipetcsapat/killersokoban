@@ -7,8 +7,8 @@ Ha a játék véget ér és ezen a mezőn láda áll akkor azért pont jár
 annak a játékosnak aki idetolta.
 */
 public class Goal extends Field {
-    public Goal(String objName, GameManager gm) {
-		super(objName);
+    public Goal(GameManager gm) {
+		super();
 		
 		this.gm = gm;
 		

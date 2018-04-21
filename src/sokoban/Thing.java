@@ -33,7 +33,7 @@ public abstract class Thing implements Loggable {
 	/**
 	 * leszármazottakban van megvalósítva
 	 */
-	public abstract boolean InteractWorker(Directions d);
+	public abstract boolean InteractWorker(Directions d, int f);
 
 	/**
 	 * @param field beállítja az objektumhoz tartozó a fieldet
@@ -56,10 +56,10 @@ public abstract class Thing implements Loggable {
 	/**
 	 * leszármazottakban van megvalósítva
 	 */
-	public abstract boolean Movable(Directions d);
+	public abstract boolean Movable(Directions d, int f);
 
 	/**
 	 * leszármazottakban van megvalósítva
 	 */
-	public abstract boolean InteractBox(Directions d);
+	public abstract boolean InteractBox(Directions d, int f);
 }

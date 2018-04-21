@@ -7,14 +7,16 @@ Ha láda kerül rá a vonatkozó Hole objektum kinyílik.
  */
 public class Lever extends Field {
     private Hole hole;
+    private int ID;
 
     /**
      * konstrunktor
      * @param objName az objektum neve
      */
-    public Lever(String objName)
+    public Lever(int ID)
     {
-      super(objName);
+      super();
+      this.ID = ID;
     }
 
     /**
@@ -24,6 +26,10 @@ public class Lever extends Field {
     {
     	
         hole.Toggle();
+    }
+    
+    public int GetID() {
+    	return ID;
     }
 
     /**

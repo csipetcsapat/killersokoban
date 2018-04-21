@@ -17,11 +17,11 @@ public class Wall extends Thing {
 	}
 
 	/**
-	 * törli magát a játéktérről
+	 * törli magát a játéktérről, de a fal nem tud meghalni
 	 */
 	@Override
 	public void Destroy() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
@@ -30,7 +30,7 @@ public class Wall extends Thing {
 	 * @return mindig false-al tér vissza, mert a fal nem mozdítható
 	 */
 	@Override
-	public boolean InteractWorker(Directions d) {
+	public boolean InteractWorker(Directions d, int f) {
 		
 		return false;
 	}
@@ -40,7 +40,7 @@ public class Wall extends Thing {
 	 * @return mindig false-al tér vissza, mert a fal nem mozdítható
 	 */
 	@Override
-	public boolean Movable(Directions d) {
+	public boolean Movable(Directions d, int f) {
 		
 		return false;
 	}
@@ -50,7 +50,7 @@ public class Wall extends Thing {
 	 * @return mindig false-al tér vissza, mert a fal nem mozdítható
 	 */
 	@Override
-	public boolean InteractBox(Directions d) {
+	public boolean InteractBox(Directions d, int f) {
 	
 		return false;
 	}

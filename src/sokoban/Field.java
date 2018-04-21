@@ -10,13 +10,15 @@ public class Field implements Loggable {
     private Thing thing;
     private Field[] neighbours= new Field[4];
     private String objName;
+    private int roughness;
 
     /**
      * konstruktor
      * @param objName az objektum neve
      */
-    public Field(String objName) {
-    	this.objName = objName;
+    public Field() {
+    	
+    	roughness = 10;
     }
 
     /**
@@ -44,10 +46,20 @@ public class Field implements Loggable {
      */
     public Thing GetThing()
     {
-    	
-    	
         return thing;
     }
+    
+    public int GetRoughness() 
+    {
+    	return roughness;
+    }
+    
+    public void SetRoughness(int r) 
+    {
+    	roughness = r;
+    }
+    
+    
 
     /**
      * nem csinál semmit, leszármazottakban lesz szerepe

@@ -8,14 +8,16 @@ Közvetlenül másik játékos nem tudja megmozdítani.
 public class Worker extends Thing {
 	
 	private int score;
+	private int force;
 
 	/**
 	 * konstruktor
 	 * @param objName az objektum neve
 	 * @param field erre a fieldre kerül az objektum
 	 */
-	public Worker(String objName, Field field) {
+	public Worker(String objName, Field field, int force) {
 		super(objName, field);
+		this.force = force;
 	}
 
 	/**
@@ -29,7 +31,7 @@ public class Worker extends Thing {
 		Field nextField = currentField.GetNeighbour(d);
 		Thing t = nextField.GetThing();
 		
-		if (t == null || t.InteractWorker(d)) {
+		if (t == null || t.InteractWorker(d, force)) {
 			currentField.SetThing(null);
 			nextField.SetThing(this);
 			
@@ -49,6 +51,30 @@ public class Worker extends Thing {
 		++score;
 	}
 
+	
+	/**
+	 * növeli az aktuális mező érdességét 1 el
+	 */
+	public void ReleaseHoney() {
+		Field currentField = GetField();
+		currentField.SetRoughness(currentField.GetRoughness()+1);
+		
+	}
+	
+	
+	/**
+	 * csökkenti az aktuális mező érdességét 1 el, de min 0
+	 */
+	public void ReleaseOil() {
+		Field currentField = GetField();
+		currentField.SetRoughness(			
+			currentField.GetRoughness() > 0 ? 
+					currentField.GetRoughness() - 1 : 0);
+	}
+	
+	
+	
+
 	/**
 	 * törli a játékost a játéktérről
 	 */
@@ -62,33 +88,33 @@ public class Worker extends Thing {
 
 	/**
 	 * @param d ebbe az irányba akarja tolni egy másik játékos
+	 * @param f ezzel az erővel
 	 * @return mindig false-al tér vissza, játékos játékost közvetlenül nem tolhat
 	 */
 	@Override
-	public boolean InteractWorker(Directions d) {
-		
+	public boolean InteractWorker(Directions d, int f) {
 		
 		return false;
 	}
 
 	/**
 	 * @param d ebbe az irányba tolnák
+	 * @param f ezzel az erővel
 	 * @return mindig true-val tér vissza
 	 */
 	@Override
-	public boolean Movable(Directions d) {
-		
-		
+	public boolean Movable(Directions d, int f) {
 		return true;
 	}
 
 	/**
 	 * @param d ebbe az irányba tolnák
+	 * @param f ezzel az erővel
 	 * @return mindig true-val tér vissza, de ha az adott d irányban van mellette valami megsemmisül,
 	 * ellenkező esetben átlép arra a fieldre
 	 */
 	@Override
-	public boolean InteractBox(Directions d) {
+	public boolean InteractBox(Directions d, int f ) {
 		
 		
 		Field currentField = GetField();

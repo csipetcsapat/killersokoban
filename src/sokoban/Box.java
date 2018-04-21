@@ -22,54 +22,66 @@ public class Box extends Thing {
 	 */
 	@Override
 	public void Destroy() {
-
-		
-		
 		GetField().SetThing(null);
 		SetField(null);
 	}
 
 	/**
 	 * @param d ebbe az irányba tolják a dobozt
+	 * @param f ezzel az erővel
 	 * @return ha elmozdul, akkor true, különben false
 	 */
 	@Override
-	public boolean InteractWorker(Directions d) {
+	public boolean InteractWorker(Directions d, int f) {
 		
-		return InteractBox(d);
+		return InteractBox(d, f);
 	}
 
 	/**
-	 * @param d ebbe az irányba akarják tolják a dobozt
+	 * @param d ebbe az irányba akarják tolni a dobozt
+	 * @param f ezzel az erővel
 	 * @return ha mozgatható true-val, ha nem false-al tér vissza
 	 */
 	@Override
-	public boolean Movable(Directions d) {
+	public boolean Movable(Directions d, int f) {
 		
 		
 		Field currentField = GetField();
+		
+		int roughness = currentField.GetRoughness();
+		if( roughness > f) {
+			return false;
+		}
+		
 		Field nextField = currentField.GetNeighbour(d);
 		Thing thing = nextField.GetThing();
 		
-		if (thing == null || thing.Movable(d))
+		if (thing == null || thing.Movable(d,  f-roughness))
 			return true;
 		
 		return false;
 	}
 
 	/**
-	 * @param d ebbe az irányba akarják tolják a dobozt
+	 * @param d ebbe az irányba tolják a dobozt
+	 * @param f ezzel az erővel
 	 * @return ha mozgatható true-val, ha nem false-al tér vissza
 	 */
 	@Override
-	public boolean InteractBox(Directions d) {
+	public boolean InteractBox(Directions d, int f) {
 		
 		
 		Field currentField = GetField();
+		int roughness = currentField.GetRoughness();
+		if( roughness > f) {
+			return false;
+		}
+		
+		
 		Field nextField = currentField.GetNeighbour(d);
 		Thing thing = nextField.GetThing();
 		
-		if (thing == null || thing.InteractBox(d)) {
+		if (thing == null || thing.InteractBox(d, f-roughness)) {
 			currentField.Operate();
 			currentField.SetThing(null);
 			nextField.SetThing(this);

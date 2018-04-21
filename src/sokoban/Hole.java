@@ -6,15 +6,17 @@ Ha nem tartozik hozzá kapcsoló mindig nyitva van.
  */
 public class Hole extends Field {
     private boolean open;
+    private int ID;
 
     /**
      * konstruktor
      * @param objName az objektum neve
      */
-    public Hole(String objName)
+    public Hole(int ID)
     {
-        super(objName);
+        super();
         open = false;
+        this.ID = ID;
     }
 
     /**
@@ -29,6 +31,10 @@ public class Hole extends Field {
         }else super.SetThing(t);
     }
 
+    
+    public int GetID() {
+    	return ID;
+    }
     /**
      * kinyitja/bezárja a lyukat, majd újra set-eli a rajta lévő thingeket
      */
