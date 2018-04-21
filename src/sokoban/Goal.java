@@ -1,24 +1,28 @@
 package sokoban;
 
-import test.Skeleton;
+
 
 /**Speciális mező, a játék célja hogy ezekre a mezőkre kerüljenek a ládák.
 Ha a játék véget ér és ezen a mezőn láda áll akkor azért pont jár
 annak a játékosnak aki idetolta.
 */
 public class Goal extends Field {
-    public Goal(String objName) {
+    public Goal(String objName, GameManager gm) {
 		super(objName);
+		
+		this.gm = gm;
+		
 	}
 
 	private Worker scoreOwner;
+	private GameManager gm;
 
     /**
      * @param t az adott thinget ráhelyezi a fieldre
      */
     public void SetThing(Thing t)
     {
-    	Skeleton.log.call(this);
+    	
         super.SetThing(t);
     }
 
@@ -27,7 +31,7 @@ public class Goal extends Field {
      */
     public Worker GetScoreOwner()
     {
-    	Skeleton.log.call(this);
+    	
         return scoreOwner;
     }
 
@@ -36,9 +40,10 @@ public class Goal extends Field {
      */
     public void Operate()
     {
-    	Skeleton.log.call(this);
-    	Worker w = Skeleton.gm.getCurrentPlayer();
-    	w.AddScore();
-        scoreOwner = w;
+    	
+    	scoreOwner = gm.getCurrentPlayer();    	
+    	
+    	scoreOwner.AddScore();
+        
     }
 }

@@ -1,6 +1,6 @@
 package sokoban;
 
-import test.Skeleton;
+
 
 /**A mezőkön elhelyezkedő tárgyak absztrakt ősosztálya.
  */
@@ -39,7 +39,7 @@ public abstract class Thing implements Loggable {
 	 * @param field beállítja az objektumhoz tartozó a fieldet
 	 */
 	public void SetField(Field field) {
-		Skeleton.log.call(this);
+		
 		
 		this.field = field;
 	}
@@ -48,7 +48,7 @@ public abstract class Thing implements Loggable {
 	 * @return visszaadja az objektumhoz tartozó fieldet
 	 */
 	public Field GetField() {
-		Skeleton.log.call(this);
+		
 		
 		return field;
 	}

@@ -1,6 +1,5 @@
 package sokoban;
 
-import test.Skeleton;
 
 /**A játékbeli ládák reprezentálása. 1 mezőnyi helyet foglal a játéktéren.
 Ha tolják akkor arrébb mozdul amennyiben bizonyos feltételek teljesülnek.
@@ -24,7 +23,7 @@ public class Box extends Thing {
 	@Override
 	public void Destroy() {
 
-		Skeleton.log.call(this);
+		
 		
 		GetField().SetThing(null);
 		SetField(null);
@@ -36,7 +35,6 @@ public class Box extends Thing {
 	 */
 	@Override
 	public boolean InteractWorker(Directions d) {
-		Skeleton.log.call(this);
 		
 		return InteractBox(d);
 	}
@@ -47,7 +45,7 @@ public class Box extends Thing {
 	 */
 	@Override
 	public boolean Movable(Directions d) {
-		Skeleton.log.call(this);
+		
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
@@ -65,7 +63,7 @@ public class Box extends Thing {
 	 */
 	@Override
 	public boolean InteractBox(Directions d) {
-		Skeleton.log.call(this);
+		
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);

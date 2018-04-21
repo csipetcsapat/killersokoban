@@ -1,6 +1,6 @@
 package sokoban;
 
-import test.Skeleton;
+
 
 /**A falat vagy oszlopot reprezentáló osztály,
 egy mezőnyi helyet foglal semmi nem tudja megmozdítani.
@@ -31,7 +31,7 @@ public class Wall extends Thing {
 	 */
 	@Override
 	public boolean InteractWorker(Directions d) {
-		Skeleton.log.call(this);
+		
 		return false;
 	}
 
@@ -41,7 +41,7 @@ public class Wall extends Thing {
 	 */
 	@Override
 	public boolean Movable(Directions d) {
-		Skeleton.log.call(this);
+		
 		return false;
 	}
 
@@ -51,7 +51,7 @@ public class Wall extends Thing {
 	 */
 	@Override
 	public boolean InteractBox(Directions d) {
-		Skeleton.log.call(this);
+	
 		return false;
 	}
 

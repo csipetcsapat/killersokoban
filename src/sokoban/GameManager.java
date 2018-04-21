@@ -1,6 +1,6 @@
 package sokoban;
 
-import test.Skeleton;
+
 
 /**A játék alapvető vezérléséért felel, azaz betölti a pályát,
 inicializálja  játékteret, ellenőrzi hogy a játék véget ért-e,
@@ -22,7 +22,7 @@ public class GameManager  implements Loggable {
 	 * @param player beállítja az aktuális játékost
 	 */
 	public void setCurrentPlayer(Worker player) {
-		Skeleton.log.call(this);
+		
 		currentPlayer = player;
 	}
 
@@ -30,7 +30,7 @@ public class GameManager  implements Loggable {
 	 * @return visszaadja az aktuális játékost
 	 */
 	public Worker getCurrentPlayer() {
-		Skeleton.log.call(this);
+		
 		return currentPlayer;
 	}
 

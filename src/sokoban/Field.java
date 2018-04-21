@@ -1,8 +1,8 @@
 package sokoban;
 
-import test.Skeleton;
+
 /**A játéktér mezőit reprezentáló osztály.
-Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat”.
+Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat�.
 */
 
 
@@ -24,7 +24,7 @@ public class Field implements Loggable {
      */
     public void SetThing(Thing t)
     {
-    	Skeleton.log.call(this);
+    	
         thing = t;
     }
 
@@ -34,7 +34,7 @@ public class Field implements Loggable {
      */
     public Field GetNeighbour(Directions d)
     {
-    	Skeleton.log.call(this);
+    	
     	
         return neighbours[d.ordinal()];
     }
@@ -44,7 +44,7 @@ public class Field implements Loggable {
      */
     public Thing GetThing()
     {
-    	Skeleton.log.call(this);
+    	
     	
         return thing;
     }
@@ -54,7 +54,7 @@ public class Field implements Loggable {
      */
     public void Operate()
     {
-    	Skeleton.log.call(this);
+    	
     }
 
     /**
@@ -63,7 +63,6 @@ public class Field implements Loggable {
      */
     public void SetNeighbour(Directions d,Field f)
     {
-    	Skeleton.log.call(this);
     	
         neighbours[d.ordinal()]=f;
     }

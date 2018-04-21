@@ -1,7 +1,5 @@
 package sokoban;
 
-import test.Skeleton;
-
 /**A játékos által irányított munkást reprezentáló osztály.
 A ládákat el tudja tolni.
 Ha másik játékos ládát tol rá és nem tud kitérni meghal.
@@ -25,7 +23,7 @@ public class Worker extends Thing {
 	 * @return visszaadja a léptetés sikerességét
 	 */
 	public boolean Move(Directions d) {
-		Skeleton.log.call(this);
+		
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);
@@ -56,7 +54,7 @@ public class Worker extends Thing {
 	 */
 	@Override
 	public void Destroy() {
-		Skeleton.log.call(this);
+		
 		
 		GetField().SetThing(null);
 		SetField(null);
@@ -68,7 +66,7 @@ public class Worker extends Thing {
 	 */
 	@Override
 	public boolean InteractWorker(Directions d) {
-		Skeleton.log.call(this);
+		
 		
 		return false;
 	}
@@ -79,7 +77,7 @@ public class Worker extends Thing {
 	 */
 	@Override
 	public boolean Movable(Directions d) {
-		Skeleton.log.call(this);
+		
 		
 		return true;
 	}
@@ -91,7 +89,7 @@ public class Worker extends Thing {
 	 */
 	@Override
 	public boolean InteractBox(Directions d) {
-		Skeleton.log.call(this);
+		
 		
 		Field currentField = GetField();
 		Field nextField = currentField.GetNeighbour(d);

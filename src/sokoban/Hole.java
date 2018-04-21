@@ -1,6 +1,5 @@
 package sokoban;
 
-import test.Skeleton;
 /**Lyuk, ha nyitva van és ládát tolnak rá az leesik azaz kikerül a játéktérről.
 Ha játékos áll rá ugyanilyen állapotban, akkor meghal.
 Ha nem tartozik hozzá kapcsoló mindig nyitva van.
@@ -23,7 +22,7 @@ public class Hole extends Field {
      */
     public void SetThing(Thing t)
     {
-    	Skeleton.log.call(this);
+    	
         if(open && t != null)
         {
             t.Destroy();
@@ -35,7 +34,7 @@ public class Hole extends Field {
      */
     public void Toggle()
     {
-    	Skeleton.log.call(this);
+    	
         open = !open;
         this.SetThing(super.GetThing());
     }
