@@ -15,7 +15,7 @@ public class Hole extends Field {
     public Hole(int ID)
     {
         super();
-        open = false;
+        open = true;
         this.ID = ID;
     }
 

@@ -141,6 +141,7 @@ public class Map {
 		for (Lever lever : levers) {
 			for (Hole hole : holes) {
 				if (hole.GetID() == lever.GetID()) {
+					hole.Toggle();
 					lever.SetHole(hole);
 					break;
 				}
