@@ -29,7 +29,12 @@ public class Worker extends Thing {
 	public boolean Move(Directions d) {
 		
 		
+		
 		Field currentField = GetField();
+		if (currentField == null)
+			return false;
+		
+		
 		Field nextField = currentField.GetNeighbour(d);
 		Thing t = nextField.GetThing();
 		

@@ -36,7 +36,7 @@ public class Proto {
 		 
 		map.LoadMap(1, "test.txt", gm);
 		
-		map.PrintMap();
+		gm.Play();
 		
 		return ;
 		

@@ -124,7 +124,7 @@ public class Map {
 		    							break;
 		                		
 		                	// ez elvileg valos k0rnyezetben nem kell hogy olvashato legyen mert 
-		    				// a playerek a spawnokra kerul 
+		    				// a playerek a spawnokra kerulnek , de igy mondjuk olyan mapot is be lehet tolteni ahol playerek vannak lerakva
 		    							//a magic konstans az ero nem tudom honnan fog jonni
 		                	case 'P' :  if (currPlayer < playerCount) {
 		                					Worker p = new Worker(newField, 12, Character.getNumericValue(tokens[i].charAt(1)));
@@ -175,13 +175,14 @@ public class Map {
 
 		for ( int i = 0; i < playerCount; i++) {
 			if (i < spawns.size()  ) {
+				//magic constant worker power
 				Worker p = new Worker(spawns.get(i), 12, i);
 				spawns.get(i).SetThing(p);
 				workers.add(p);
 			}
 		}
 		
-		// TODO: Link Fields
+		//  Link Fields
 		
 		
 		
@@ -198,7 +199,7 @@ public class Map {
 		}
 		
 		
-		// TODO: Link Holes
+		//  Link Holes
 		for (Lever l : levers) {
 			for (Hole h : holes) {
 				if (l.GetID() == h.GetID()) {
@@ -213,6 +214,7 @@ public class Map {
 		
 		gm.SetPlayers(workers);
 		gm.SetBoxes(boxes);
+		gm.SetMap(this);
 		
 		
 	}
