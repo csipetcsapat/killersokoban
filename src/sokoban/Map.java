@@ -10,14 +10,20 @@ public class Map {
 	
 	private ArrayList<Goal> goals;
 	private ArrayList<ArrayList<Field>> fields;
+	private ArrayList<Hole> holes;
 	
 	public Map() {
 		goals = new ArrayList<>();
 		fields = new ArrayList<>();
+		holes = new ArrayList<>();
 	}
 	
 	public ArrayList<Goal> GetGoals() {
 		return goals;
+	}
+	
+	public ArrayList<Hole> GetHoles() {
+		return holes;
 	}
 	
 	private Field processField(String token, ArrayList<Box> boxes, ArrayList<Worker> players,
@@ -80,18 +86,16 @@ public class Map {
 		return field;
 	}
 	
-	public void LoadMap(int playerCount, String mapName, GameManager gm) {
+	public boolean LoadMap(int playerCount, String mapName, GameManager gm) {
 		ArrayList<Box> boxes = new ArrayList<>();
 		ArrayList<Worker> players = new ArrayList<>();
-		ArrayList<Hole> holes = new ArrayList<>();
 		ArrayList<Lever> levers = new ArrayList<>();
 		
 		Scanner in = null;
 		try {
 			in = new Scanner(new File(mapName));
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return; //exit if no such file
+			return false;
 		}
 		
 		java.util.Map<Integer, Integer> forceMap = new TreeMap<>();
@@ -146,6 +150,8 @@ public class Map {
 		gm.SetBoxes(boxes);
 		gm.SetPlayers(players);
 		gm.SetMap(this);
+		
+		return true;
 	}
 	
 	

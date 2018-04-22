@@ -103,6 +103,8 @@ public class Worker extends Thing {
 		
 		GetField().SetThing(null);
 		SetField(null);
+		
+		System.out.println("Player " + ID + " died.");
 	}
 
 	/**

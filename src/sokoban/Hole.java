@@ -30,6 +30,10 @@ public class Hole extends Field {
             t.Destroy();
         }else super.SetThing(t);
     }
+    
+    public boolean GetStatus() {
+    	return open;
+    }
 
     
     public int GetID() {
