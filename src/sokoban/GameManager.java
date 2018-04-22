@@ -111,10 +111,6 @@ public class GameManager  implements Loggable {
 			map.PrintMap();	
 		}
 		scan.close();
-		
-		
-		
-		
 	}
 	
 	public boolean CheckEndgame() {
