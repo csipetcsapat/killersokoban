@@ -21,6 +21,16 @@ public class Worker extends Thing {
 		this.force = force;
 		this.ID = ID;
 	}
+	
+	public int GetID() {
+		return ID;
+	}
+	
+	public int GetForce() {
+		return force;
+	}
+	
+	
 
 	/**
 	 * @param d ebbe az irányba léptetjük a játékost

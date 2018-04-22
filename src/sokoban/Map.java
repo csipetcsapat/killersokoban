@@ -37,7 +37,7 @@ public class Map {
             int currPlayer = 0;
             
             
-        // TODO:read map file
+        // read map file
 		try {
             BufferedReader buffer=new BufferedReader(new FileReader(mapName));
             String line;
@@ -47,11 +47,20 @@ public class Map {
             width = Integer.parseInt(tokens[0]);
             height = Integer.parseInt(tokens[1]);
             
+            //read forces for workers
+          
             
             
-            // TODO:create Fields, and place things
+            // create Fields, and place things
             while((line = buffer.readLine()) != null && line.length() !=0){
                 tokens = line.split(" ");
+                
+                // map rows are starting with #
+                if(!tokens[0].equals("#")) {
+                	workers.add(new Worker(null,Integer.parseInt(tokens[1]),  Integer.parseInt(tokens[0])));
+                	continue;
+                }
+                
                 for (int i = 0; i < tokens.length; i++)
                 {
                 	Field newField;
@@ -117,21 +126,25 @@ public class Map {
 		                				boxes.add(b);		                	
 		                				newThing = b;
 		                				break;               
-		                	
-		                	
-		                	case 'S' : 	newThing = null;
-		                				spawns.add(newField);		                		
-		    							break;
+		              
 		                		
 		                	// ez elvileg valos k0rnyezetben nem kell hogy olvashato legyen mert 
 		    				// a playerek a spawnokra kerulnek , de igy mondjuk olyan mapot is be lehet tolteni ahol playerek vannak lerakva
 		    							//a magic konstans az ero nem tudom honnan fog jonni
 		                	case 'P' :  if (currPlayer < playerCount) {
-		                					Worker p = new Worker(newField, 12, Character.getNumericValue(tokens[i].charAt(1)));
-		                					newThing = p;
+		                					for (Worker w : workers) {
+		                						
+		                						if(Character.getNumericValue(tokens[i].charAt(1)) == w.GetID()) {
+		                							newThing = w;
+		                							w.SetField(newField);
+		                							currPlayer++;
+		                						}
 		                					
-		                					workers.add(p);
-		                					currPlayer++;
+		                					}
+		                					
+		                					
+		                					
+		                					
 		                				}
 		                				break;
 		                	
@@ -171,16 +184,7 @@ public class Map {
         }
 		
 		
-		//creating players on spawn
-
-		for ( int i = 0; i < playerCount; i++) {
-			if (i < spawns.size()  ) {
-				//magic constant worker power
-				Worker p = new Worker(spawns.get(i), 12, i);
-				spawns.get(i).SetThing(p);
-				workers.add(p);
-			}
-		}
+		
 		
 		//  Link Fields
 		

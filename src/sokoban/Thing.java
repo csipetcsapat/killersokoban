@@ -17,6 +17,8 @@ public abstract class Thing implements Loggable {
 		this.field = field;
 		
 	}
+	
+
 
 	/**
 	 * @return visszaadja az objektum nevét

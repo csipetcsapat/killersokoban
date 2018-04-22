@@ -61,12 +61,18 @@ public class GameManager  implements Loggable {
 	public void Play() {
 		
 		
-		// ide kell majd a parancsertelmezo, ez igy csak egy kis WASD tesztloop de mukodik
+		// ide kell majd a parancsertelmezo, ez igy csak egy kis WASD tesztloop de mukodik player 1 nek
 		
 		
 		boolean hasEnded = false;
 		
+		for(Worker w : players) {
+	    	System.out.println(""+w.GetID()+" "+w.GetForce() 
+	    	//+ w.GetField() == null ? " dead" : " alive"
+	    	);
+	    }
 		map.PrintMap();
+		
 		Scanner scan= new Scanner(System.in);
 		while(!hasEnded) {
 			
@@ -92,8 +98,17 @@ public class GameManager  implements Loggable {
 				
 			
 			}
-	    CheckEndgame();
-		map.PrintMap();	
+		    CheckEndgame();
+		    
+		   
+		    
+		    for(Worker w : players) {
+		    	System.out.println(""+w.GetID()+" "+w.GetForce() 
+		    	//+ w.GetField() == null ? " dead" : " alive"
+		    	);
+		    }
+		    
+			map.PrintMap();	
 		}
 		scan.close();
 		
