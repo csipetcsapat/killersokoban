@@ -30,6 +30,7 @@ public class CommandGo implements Command {
 					return;
 				}
 				
+				Proto.gm.setCurrentPlayer(worker);
 				boolean move = worker.Move(d);
 				
 				if (move)
