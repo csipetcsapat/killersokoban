@@ -14,6 +14,7 @@ public class Interpreter {
 		commandMap.put("release", new CommandRelease());
 		commandMap.put("playerstatus", new CommandPlayerstatus());
 		commandMap.put("holestatus", new CommandHolestatus());
+		commandMap.put("gamestatus", new CommandGamestatus());
 	}
 	
 	public void execute(String input) {
