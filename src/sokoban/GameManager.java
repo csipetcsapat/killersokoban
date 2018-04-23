@@ -1,7 +1,7 @@
 package sokoban;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Set;
 
 /**A játék alapvető vezérléséért felel, azaz betölti a pályát,
 inicializálja  játékteret, ellenőrzi hogy a játék véget ért-e,
@@ -71,11 +71,65 @@ public class GameManager  implements Loggable {
 	}
 	
 	public boolean CheckEndgame() {
-		return false;
-		//TODO:ezt meg kell irni
+		if (IsEveryBoxOnGoalField()) //also true if there are no boxes left
+			return true;
 		
+		for (Worker player : players) {
+			if (player.GetField() == null)
+				continue;
+			
+			Set<Field> accessibleFields = map.AccessibleFields(player.GetField());
+			for (Box box : boxes) {
+				if (box.GetField() == null)
+					continue;
+				
+				if (IsBoxAccessible(box, accessibleFields, player.GetForce()))
+					return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	
+	private boolean IsBoxAccessible(Box box, Set<Field> accessibleFields, int force) {
+		
+		Field neighbour = box.GetField().GetNeighbour(Directions.DOWN);
+		if (box.Movable(Directions.UP, force) && neighbour != null &&
+				accessibleFields.contains(neighbour))
+			return true;
+		
+		neighbour = box.GetField().GetNeighbour(Directions.LEFT);
+		if (box.Movable(Directions.RIGHT, force) && neighbour != null &&
+				accessibleFields.contains(neighbour))
+			return true;
+		
+		neighbour = box.GetField().GetNeighbour(Directions.UP);
+		if (box.Movable(Directions.DOWN, force) && neighbour != null &&
+				accessibleFields.contains(neighbour))
+			return true;
+		
+		neighbour = box.GetField().GetNeighbour(Directions.RIGHT);
+		if (box.Movable(Directions.LEFT, force) && neighbour != null &&
+				accessibleFields.contains(neighbour))
+			return true;
+		
+		
+		return false;
+	}
+	
+	private boolean IsEveryBoxOnGoalField() {
+		for (Box box : boxes) {
+			for (Goal goal : map.GetGoals()) {
+				if (box.GetField() != goal)
+					return false;
+			}
+		}
+		
+		if (map.GetGoals().size() == 0)
+			return false;
+		
+		return true;
+	}
 	
 }

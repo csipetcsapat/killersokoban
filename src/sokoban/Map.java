@@ -3,8 +3,11 @@ package sokoban;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Map {
 	
@@ -155,6 +158,36 @@ public class Map {
 		return true;
 	}
 	
+	private void TraverseMap(Set<Field> fields, Field startField) {
+		if (fields.contains(startField) ||
+				(holes.contains(startField) && ((Hole)startField).GetStatus()))
+			return;
+		
+		fields.add(startField);
+		
+		Field field = startField.GetNeighbour(Directions.UP);
+		if (field.GetThing() == null)
+			TraverseMap(fields, field);
+		
+		field = startField.GetNeighbour(Directions.RIGHT);
+		if (field.GetThing() == null)
+			TraverseMap(fields, field);
+		
+		field = startField.GetNeighbour(Directions.DOWN);
+		if (field.GetThing() == null)
+			TraverseMap(fields, field);
+		
+		field = startField.GetNeighbour(Directions.LEFT);
+		if (field.GetThing() == null)
+			TraverseMap(fields, field);
+	}
+	
+	public Set<Field> AccessibleFields(Field startField) {
+		Set<Field> fields = new HashSet<>();
+		TraverseMap(fields, startField);
+		
+		return fields;
+	}
 	
 	public void PrintMap() {
 		for (ArrayList<Field> arrayList : fields) {
