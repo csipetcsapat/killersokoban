@@ -1,15 +1,17 @@
 package sokoban;
 
+import graphics.Drawable;
 
 /**A játéktér mezőit reprezentáló osztály.
 Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat�.
 */
 
 
-public class Field {
+public class Field implements Drawable {
     protected Thing thing;
     private Field[] neighbours= new Field[4];
     protected int roughness;
+    private Object graphic;
 
     /**
      * konstruktor
@@ -77,7 +79,19 @@ public class Field {
     	
         neighbours[d.ordinal()]=f;
     }
+    
+    
 	
+	@Override
+	public Object GetGraphic() {
+		return graphic;
+	}
+
+	@Override
+	public void SetGraphic(Object graphic) {
+		this.graphic = graphic;
+	}
+
 	public String toString() {
 		
 		
