@@ -23,7 +23,7 @@ public class GameBoard extends JPanel {
 		
 		for (ArrayList<Field> row : fields) {
 			for (Field f : row)
-				add(new JLabel(new ImageIcon((Image)f.GetGraphic())));
+				add(new Square(f));
 		}
 	}
 }
