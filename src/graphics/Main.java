@@ -72,9 +72,7 @@ public class Main {
 	public static void main(String[] args) {
 		ArrayList<Image> ImagePlayerIcons = new ArrayList<>();
 		
-		int SquareSize = 100;
-		
-		Square.SetSize(SquareSize);
+		int SquareSize = 150;
 		
 		LoadIcons(SquareSize, ImagePlayerIcons);
 
