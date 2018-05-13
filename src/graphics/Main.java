@@ -45,27 +45,32 @@ public class Main {
 			
 		});
 		
+		newGameButtonElement.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				mw.SetContent(startGame());
+			}
+		});
+		
 		menu.add(newGameButtonElement);
 		menu.add(exitButtonElement);
 		
 		return menu;
 	}
 
-	public static void main(String[] args) {
-
-		mw = new MainWindow(1024, 768);
+	private static GameBoard startGame() {
+		GameBoard gb = new GameBoard();
+		return gb;
 		
-		ArrayList<Image> ImagePlayerIcons = new ArrayList<>();; 
+	}
+	public static void main(String[] args) {
+		ArrayList<Image> ImagePlayerIcons = new ArrayList<>();
 		
 		int SquareSize = 100;
 		
 		Square.SetSize(SquareSize);
 		
 		LoadIcons(SquareSize, ImagePlayerIcons);
-		
-		
-
-		
 
 		mw = new MainWindow(1024,  768);
 		
