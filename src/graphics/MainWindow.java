@@ -1,14 +1,26 @@
 package graphics;
 
+import java.awt.BorderLayout;
+import java.awt.Component;
+
 import javax.swing.JFrame;
 
 public class MainWindow {
 	private JFrame frame;
+	private Component comp = null;
 	
 	public MainWindow(int width, int height) {
 		frame = new JFrame("Killer Sokoban");
 		frame.setSize(width, height);
-		frame.setLayout(null);
+		frame.setLayout(new BorderLayout());
+	}
+	
+	public void SetContent(Component comp) {
+		if (this.comp != null)
+			frame.remove(this.comp);
+		
+		frame.add(comp, BorderLayout.CENTER);
+		this.comp = comp;
 	}
 	
 	public void Show() {
