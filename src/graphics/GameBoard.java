@@ -1,43 +1,32 @@
 package graphics;
 
-import sokoban.*;
-
-import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class GameBoard extends JPanel { 
-	
-	Map map;
-	
-	void SetMap (Map m) {
-		this.map = m;
-	}
-	
-	
-	
-	
-	
-	
-	public void paintComponent(Graphics g) {
-		
-		int i,j;
-		i = j = 0;
-		for( ArrayList<Field> Rows :  map.GetFields()) {
-			for(Field field : Rows) {				
-				Square.Draw(g,field, i, j );
-				i++;
-			}		
-			j++;
-		}
-		
-		
-		
-		
-	}
-	
-	
-	
+import sokoban.Field;
+import sokoban.Map;
 
+public class GameBoard extends JPanel {
+	static final long serialVersionUID = -1524486995037653542L;
+	private Map map;
+
+	public GameBoard(Map map) {
+		this.map = map;
+	}
+	
+	public void Update() {
+		map.PrintMap();
+		ArrayList<ArrayList<Field>> fields = map.GetFields();
+		setLayout(new GridLayout(fields.size(), fields.get(0).size()));
+		
+		for (ArrayList<Field> row : fields) {
+			for (Field f : row)
+				add(new JLabel(new ImageIcon((Image)f.GetGraphic())));
+		}
+	}
 }

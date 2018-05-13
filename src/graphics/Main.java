@@ -63,9 +63,8 @@ public class Main {
 		GameManager gm = new GameManager();
 		map.LoadMap(2, "test.txt", gm);
 		
-		GameBoard gb = new GameBoard();
-		gb.SetMap(map);
-		
+		GameBoard gb = new GameBoard(map);
+		gb.Update();
 		
 		return gb;
 		
