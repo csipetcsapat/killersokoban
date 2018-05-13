@@ -103,9 +103,10 @@ public class Main {
 		Wall.SetGraphic(img);
 		
 		
-		Image img2 = (new ImageIcon("res/oil.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT);	
+		Image img2 = (new ImageIcon("res/oil.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT);
 		img = (new ImageIcon("res/honey.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
-		Square.SetLayer(img2, img);
+		
+		Square.setRoughnessImages(img2, img);
 		
 		img = (new ImageIcon("res/rick.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
 		players.add(img);
