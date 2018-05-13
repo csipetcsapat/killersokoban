@@ -25,8 +25,8 @@ public class Main {
 	private static Menu createMenu() {
 		Menu menu = new Menu();
 		
-		MenuElement newGameButtonElement = new MenuElement(loadImage("res/box.png"));
-		MenuElement exitButtonElement = new MenuElement(loadImage("res/oil.png"));
+		MenuElement newGameButtonElement = new MenuElement(loadImage("res/startgame.png"));
+		MenuElement exitButtonElement = new MenuElement(loadImage("res/exitgame.png"));
 		
 		exitButtonElement.addMouseListener(new MouseAdapter() {
 
