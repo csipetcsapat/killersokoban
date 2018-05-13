@@ -8,6 +8,7 @@ Ha láda kerül rá a vonatkozó Hole objektum kinyílik.
 public class Lever extends Field {
     private Hole hole;
     private int ID;
+    private static Object graphic;
 
     /**
      * konstrunktor
@@ -56,5 +57,14 @@ public class Lever extends Field {
 		
 		return s;
 		
+	}
+    
+    public static void SetGraphic(Object graphic) {
+		Lever.graphic = graphic;
+	}
+	
+	@Override
+	public Object GetGraphic() {
+		return Lever.graphic;
 	}
 }

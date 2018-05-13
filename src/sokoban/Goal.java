@@ -7,6 +7,8 @@ Ha a játék véget ér és ezen a mezőn láda áll akkor azért pont jár
 annak a játékosnak aki idetolta.
 */
 public class Goal extends Field {
+	private static Object graphic;
+	
     public Goal(GameManager gm) {
 		super();
 		
@@ -60,5 +62,14 @@ public class Goal extends Field {
 		}
 		
 		return s;
+	}
+	
+	public static void SetGraphic(Object graphic) {
+		Goal.graphic = graphic;
+	}
+	
+	@Override
+	public Object GetGraphic() {
+		return Goal.graphic;
 	}
 }

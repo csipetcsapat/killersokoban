@@ -7,6 +7,7 @@ Ha nem tartozik hozzá kapcsoló mindig nyitva van.
 public class Hole extends Field {
     private boolean open;
     private int ID;
+    private static Object graphic;
 
     /**
      * konstruktor
@@ -63,5 +64,14 @@ public class Hole extends Field {
 		
 		return s;
 		
+	}
+    
+    public static void SetGraphic(Object graphic) {
+		Hole.graphic = graphic;
+	}
+	
+	@Override
+	public Object GetGraphic() {
+		return Hole.graphic;
 	}
 }
