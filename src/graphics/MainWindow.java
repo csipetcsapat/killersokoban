@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 public class MainWindow {
 	private JFrame frame;
 	
+	
+	
 	public MainWindow(int width, int height) {
 		frame = new JFrame("Killer Sokoban");
 		frame.setSize(width, height);
