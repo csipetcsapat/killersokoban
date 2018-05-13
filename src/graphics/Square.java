@@ -7,6 +7,9 @@ import sokoban.*;
 
 public class Square {
 	
+	static Image oil, honey;
+	Image bg, layer, fg;
+	
 	static int size = 100;
 	int dimX;
 	int dimY;
@@ -16,6 +19,11 @@ public class Square {
 		size = Size;
 	}
 	
+	static void SetLayer(Image Oil, Image Honey) {
+		oil = Oil;
+		honey = Honey;
+	}
+	
 	Square(int x, int y) {
 		dimX = x;
 		dimY = y;
@@ -23,7 +31,7 @@ public class Square {
 	
 	void Set(Graphics g, Field field ) {
 		
-		Image bg, layer, fg;
+		
 		
 		bg = (Image)field.GetGraphic();
 		g.drawImage(bg, dimX * size, dimY*size, size, size, null);
@@ -31,12 +39,12 @@ public class Square {
 		
 		
 		if (field.GetRoughness() > 6) {
-			//layer = honey
-			g.drawImage(layer, dimX * size, dimY*size, size, size, null);
+			
+			g.drawImage(honey, dimX * size, dimY*size, size, size, null);
 			
 		} else if(field.GetRoughness() < 4 ) {
 			//layer = oil
-			g.drawImage(layer, dimX * size, dimY*size, size, size, null);
+			g.drawImage(oil, dimX * size, dimY*size, size, size, null);
 		} 
 		
 		Thing thing;
