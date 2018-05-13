@@ -7,14 +7,12 @@ import java.util.Set;
 inicializálja  játékteret, ellenőrzi hogy a játék véget ért-e,
 illetve nyertest hirdet ha igen.
 */
-public class GameManager  implements Loggable {
+public class GameManager {
 	private Worker currentPlayer;
-	private String objName;
 	private ArrayList<Worker> players;
 	private ArrayList<Box> boxes;
 	private Map map;
 	
-
 	/**
 	 * konstruktor
 	 * @param objName az objektum neve
@@ -37,13 +35,6 @@ public class GameManager  implements Loggable {
 	public Worker getCurrentPlayer() {
 		
 		return currentPlayer;
-	}
-
-	/**
-	 * @return visszadja az objektum nevét
-	 */
-	public String GetObjName() {
-		return objName;
 	}
 	
 	public void SetBoxes(ArrayList<Box> boxes) {

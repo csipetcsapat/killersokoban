@@ -6,10 +6,9 @@ Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztály�
 */
 
 
-public class Field implements Loggable {
+public class Field {
     protected Thing thing;
     private Field[] neighbours= new Field[4];
-    private String objName;
     protected int roughness;
 
     /**
@@ -78,13 +77,6 @@ public class Field implements Loggable {
     	
         neighbours[d.ordinal()]=f;
     }
-
-    /**
-     * @return visszaadja az objektum nevét
-     */
-	public String GetObjName() {
-		return objName;
-	}
 	
 	public String toString() {
 		

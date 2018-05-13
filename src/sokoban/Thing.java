@@ -4,9 +4,8 @@ package sokoban;
 
 /**A mezőkön elhelyezkedő tárgyak absztrakt ősosztálya.
  */
-public abstract class Thing implements Loggable {
+public abstract class Thing {
 	private Field field;
-	private String objName;
 
 	/**
 	 * konstruktor
@@ -18,15 +17,6 @@ public abstract class Thing implements Loggable {
 		
 	}
 	
-
-
-	/**
-	 * @return visszaadja az objektum nevét
-	 */
-	public String GetObjName() {
-		return objName;
-	}
-
 	/**
 	 * leszármazottakban van megvalósítva
 	 */
