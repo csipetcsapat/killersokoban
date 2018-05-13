@@ -21,6 +21,7 @@ public class Worker extends Thing {
 		super( field);
 		this.force = force;
 		this.ID = ID;
+		this.score = 0;
 	}
 	
 	public int GetID() {
@@ -68,6 +69,10 @@ public class Worker extends Thing {
 	public void AddScore() {
 		++score;
 	}
+	
+	public int GetScore() {
+		return score;
+	}
 
 	
 	/**
@@ -100,12 +105,8 @@ public class Worker extends Thing {
 	 */
 	@Override
 	public void Destroy() {
-		
-		
 		GetField().SetThing(null);
 		SetField(null);
-		
-		System.out.println("Player " + ID + " died.");
 	}
 
 	/**

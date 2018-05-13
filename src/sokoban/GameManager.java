@@ -57,12 +57,23 @@ public class GameManager {
 		return map;
 	}
 	
-	public void Play() {
+	public boolean MovePlayer(int index, Directions d) {
+		Worker player = players.get(index);
+		setCurrentPlayer(player);
 		
+		return player.Move(d);
 	}
 	
 	public boolean CheckEndgame() {
 		if (IsEveryBoxOnGoalField()) //also true if there are no boxes left
+			return true;
+		
+		int alivePlayers = 0;
+		for (Worker player : players)
+			if (player.GetField() != null)
+				++alivePlayers;
+		
+		if (alivePlayers <= 1)
 			return true;
 		
 		for (Worker player : players) {

@@ -78,7 +78,7 @@ public class Main {
 			gm.GetPlayers().get(i).SetGraphic(ImagePlayerIcons.get(i));
 		}
 
-		GameBoard gb = new GameBoard(map);
+		GameBoard gb = new GameBoard(map, gm);
 	
 		
 		gb.Update();

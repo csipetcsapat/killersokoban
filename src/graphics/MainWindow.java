@@ -25,6 +25,7 @@ public class MainWindow {
 		this.comp = comp;
 		frame.revalidate();
 		frame.repaint();
+		comp.requestFocus();
 	}
 	
 	public void Show() {
