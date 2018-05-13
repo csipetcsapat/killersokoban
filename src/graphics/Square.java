@@ -1,59 +1,43 @@
 package graphics;
-import java.awt.Image;
+
 import java.awt.Graphics;
+import java.awt.Image;
 
+import javax.swing.JPanel;
 
-import sokoban.*;
+import sokoban.Field;
+import sokoban.Thing;
 
- public class Square { 
+public class Square extends JPanel {
+	private static final long serialVersionUID = 2718721473398628642L;
+	private static Image oilImage;
+	private static Image honeyImage;
 	
+	Field field;
 	
-	
-	static Image oil, honey;
-	
-	
-	static int size = 100;
-	
-	
-	
-	static void SetSize(int Size) {
-		size = Size;
+	public Square(Field f) {
+		this.field = f;
 	}
 	
-	static void SetLayer(Image Oil, Image Honey) {
-		oil = Oil;
-		honey = Honey;
+	public static void setRoughnessImages(Image oilImage, Image honeyImage) {
+		Square.oilImage = oilImage;
+		Square.honeyImage = honeyImage;
 	}
-	
-	
-	
-	static void Draw(Graphics g, Field field, int dimX, int dimY ) {
-		
-		g.drawImage((Image)field.GetGraphic(), dimX * size, dimY*size, size, size, null);
-			
-		
-		
-		if (field.GetRoughness() > 6) {
-			
-			g.drawImage(honey, dimX * size, dimY*size, size, size, null);
-			
-		} else if(field.GetRoughness() < 4 ) {
-			//layer = oil
-			g.drawImage(oil, dimX * size, dimY*size, size, size, null);
-		} 
-		
-		Thing thing;
-		if ((thing = field.GetThing()) != null) {
-			
-			g.drawImage((Image)thing.GetGraphic(), dimX * size, dimY*size, size, size, null);		
-		} 
-		
-	
 
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		
-
+		g.drawImage((Image)field.GetGraphic(), 0, 0, this);
 		
+		if (field.GetRoughness() < 4)
+			g.drawImage(oilImage, 0, 0, this);
+		else if (field.GetRoughness() > 6)
+			g.drawImage(honeyImage, 0, 0, this);
 		
+		Thing t;
+		if ((t = field.GetThing()) != null)
+			g.drawImage((Image)t.GetGraphic(), 0, 0, this);
 	}
 	
 	
