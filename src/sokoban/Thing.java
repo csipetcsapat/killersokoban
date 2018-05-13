@@ -1,11 +1,12 @@
 package sokoban;
 
-
+import graphics.Drawable;
 
 /**A mezőkön elhelyezkedő tárgyak absztrakt ősosztálya.
  */
-public abstract class Thing {
+public abstract class Thing implements Drawable {
 	private Field field;
+	private Object graphic;
 
 	/**
 	 * konstruktor
@@ -43,6 +44,18 @@ public abstract class Thing {
 		
 		
 		return field;
+	}
+	
+	
+
+	@Override
+	public Object GetGraphic() {
+		return graphic;
+	}
+
+	@Override
+	public void SetGraphic(Object graphic) {
+		this.graphic = graphic;
 	}
 
 	/**
