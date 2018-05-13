@@ -7,6 +7,7 @@ Ha az összes még mozgatható láda a célzónákra kerül a a játék véget �
 */
 public class Box extends Thing {
 
+	private static Object graphic;
 	/**
 	 * konstruktor
 	 * @param objName az objektum neve
@@ -96,6 +97,16 @@ public class Box extends Thing {
 		return false;
 	}
 	
+	
+	@Override
+	public Object GetGraphic() {
+		return graphic;
+	}
+	
+	public static void SetGraphic(Object graphic) {
+		Box.graphic = graphic;
+	}
+
 	public String toString() {
 		return "B";
 	}

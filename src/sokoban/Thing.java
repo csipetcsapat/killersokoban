@@ -6,7 +6,6 @@ import graphics.Drawable;
  */
 public abstract class Thing implements Drawable {
 	private Field field;
-	private Object graphic;
 
 	/**
 	 * konstruktor
@@ -44,18 +43,6 @@ public abstract class Thing implements Drawable {
 		
 		
 		return field;
-	}
-	
-	
-
-	@Override
-	public Object GetGraphic() {
-		return graphic;
-	}
-
-	@Override
-	public void SetGraphic(Object graphic) {
-		this.graphic = graphic;
 	}
 
 	/**

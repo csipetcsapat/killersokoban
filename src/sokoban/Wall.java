@@ -6,6 +6,7 @@ package sokoban;
 egy mezőnyi helyet foglal semmi nem tudja megmozdítani.
  */
 public class Wall extends Thing {
+	private static Object graphic;
 
 	/**
 	 * kostruktor
@@ -54,6 +55,16 @@ public class Wall extends Thing {
 	
 		return false;
 	}
+	
+	@Override
+	public Object GetGraphic() {
+		return graphic;
+	}
+	
+	public static void SetGraphic(Object graphic) {
+		Wall.graphic = graphic;
+	}
+	
 	public String toString() {
 		return "#";
 	}

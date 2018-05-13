@@ -10,6 +10,7 @@ public class Worker extends Thing {
 	private int score;
 	private int force;
 	private int ID;
+	private Object graphic;
 
 	/**
 	 * konstruktor
@@ -153,6 +154,15 @@ public class Worker extends Thing {
 		}
 		
 		return true;
+	}
+	
+	@Override
+	public Object GetGraphic() {
+		return graphic;
+	}
+	
+	public void SetGraphic(Object graphic) {
+		this.graphic = graphic;
 	}
 	
 	public String toString() {

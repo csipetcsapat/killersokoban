@@ -11,7 +11,7 @@ public class Field implements Drawable {
     protected Thing thing;
     private Field[] neighbours= new Field[4];
     protected int roughness;
-    private Object graphic;
+    private static Object graphic;
 
     /**
      * konstruktor
@@ -87,9 +87,8 @@ public class Field implements Drawable {
 		return graphic;
 	}
 
-	@Override
-	public void SetGraphic(Object graphic) {
-		this.graphic = graphic;
+	public static void SetGraphic(Object graphic) {
+		Field.graphic = graphic;
 	}
 
 	public String toString() {
