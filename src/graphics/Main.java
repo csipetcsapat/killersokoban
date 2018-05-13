@@ -19,6 +19,8 @@ import javax.imageio.ImageIO;
 public class Main {
 	private static MainWindow mw;
 	
+	static ArrayList<Image> ImagePlayerIcons = new ArrayList<>();
+	
 	private static Image loadImage(String path) {
 		Image image = null;
 		try {
@@ -59,25 +61,28 @@ public class Main {
 	}
 
 	private static GameBoard startGame() {
+		int PlayerCount = 2;
 		Map map = new Map();
 		GameManager gm = new GameManager();
+		map.LoadMap(PlayerCount, "test.txt", gm);
+		for (int i = 0; i< PlayerCount; i++) {
+			gm.GetPlayers().get(i).SetGraphic(ImagePlayerIcons.get(i));
+		}
+
 		map.LoadMap(2, "test.txt", gm);
 		ArrayList<Image> ImagePlayerIcons = new ArrayList<>();
 		int mapsize = map.GetFields().get(0).size();
 		int SquareSize = 1024/mapsize + 1;
-		
 		int maph = map.GetFields().size();
 		int SquareSize2 = 768/maph + 1;
-		
 		LoadIcons(SquareSize, SquareSize2, ImagePlayerIcons);
+		
 		GameBoard gb = new GameBoard(map);
 		gb.Update();
-		
 		return gb;
 		
 	}
 	public static void main(String[] args) {
-
 
 		mw = new MainWindow(1024,  768);
 		
