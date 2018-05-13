@@ -59,7 +59,14 @@ public class Main {
 	}
 
 	private static GameBoard startGame() {
+		Map map = new Map();
+		GameManager gm = new GameManager();
+		map.LoadMap(2, "test.txt", gm);
+		
 		GameBoard gb = new GameBoard();
+		gb.SetMap(map);
+		
+		
 		return gb;
 		
 	}
