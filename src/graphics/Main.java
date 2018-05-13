@@ -65,7 +65,7 @@ public class Main {
 		
 		Map map = new Map();
 		GameManager gm = new GameManager();
-		map.LoadMap(PlayerCount, "test.txt", gm);
+		map.LoadMap(PlayerCount, "map.txt", gm);
 
 		
 		int mapsize = map.GetFields().get(0).size();

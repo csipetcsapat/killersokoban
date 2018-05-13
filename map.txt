@@ -1,0 +1,14 @@
+1 6
+2 6
+# # # # # # # # # # # #
+# 5G 5G 5F 5F 5F 5FB 5F 5F 5F 5F #
+# 5G 5G 5H2 5F 5L1 5FB 5F 5F 5F 5F # 
+# 5F 5F 5F 5F 5F 5F 5F 5F 5F 5F #
+# 5F 5FB 5F 5F 5F 5F # # 5F 5F #
+# 5F 5F 5F 5F 5F 5F # 5G 5F 5F #
+# 5F 5F 5L2 5G 5H1B 5F 5F 5F 5F 5F #
+# 5F 5F 5F 5F 5F 5F 5F 5H3 # 5F #
+# 5F 5F 5F 5FB 5F 5FB 5F 5G # 5F #
+# 5F 5L3 5FB 5F 5F 5F 5FB # # 5F #
+# 5FP2 5F 5F 5F 5F 5F 5F 5F 5F 5FP1 #
+# # # # # # # # # # # #
