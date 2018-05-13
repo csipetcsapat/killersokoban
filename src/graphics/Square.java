@@ -5,14 +5,15 @@ import java.awt.Graphics;
 
 import sokoban.*;
 
-public class Square {
+ public class Square { 
+	
+	
 	
 	static Image oil, honey;
-	Image bg, layer, fg;
+	
 	
 	static int size = 100;
-	int dimX;
-	int dimY;
+	
 	
 	
 	static void SetSize(int Size) {
@@ -24,17 +25,11 @@ public class Square {
 		honey = Honey;
 	}
 	
-	Square(int x, int y) {
-		dimX = x;
-		dimY = y;
-	}
 	
-	void Set(Graphics g, Field field ) {
+	
+	static void Draw(Graphics g, Field field, int dimX, int dimY ) {
 		
-		
-		
-		bg = (Image)field.GetGraphic();
-		g.drawImage(bg, dimX * size, dimY*size, size, size, null);
+		g.drawImage((Image)field.GetGraphic(), dimX * size, dimY*size, size, size, null);
 			
 		
 		
@@ -49,8 +44,8 @@ public class Square {
 		
 		Thing thing;
 		if ((thing = field.GetThing()) != null) {
-			fg = (Image)thing.GetGraphic();
-			g.drawImage(fg, dimX * size, dimY*size, size, size, null);		
+			
+			g.drawImage((Image)thing.GetGraphic(), dimX * size, dimY*size, size, size, null);		
 		} 
 		
 	

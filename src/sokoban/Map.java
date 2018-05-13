@@ -29,6 +29,10 @@ public class Map {
 		return holes;
 	}
 	
+	public ArrayList<ArrayList<Field>> GetFields(){
+		return fields;
+	}
+	
 	private Field processField(String token, ArrayList<Box> boxes, ArrayList<Worker> players,
 			ArrayList<Hole> holes, ArrayList<Lever> levers,
 			java.util.Map<Integer, Integer> forceMap, GameManager gm) {
