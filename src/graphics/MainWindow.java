@@ -9,12 +9,12 @@ public class MainWindow {
 	private JFrame frame;
 	private Component comp = null;
 	
-	
-	
 	public MainWindow(int width, int height) {
 		frame = new JFrame("Killer Sokoban");
 		frame.setSize(width, height);
 		frame.setLayout(new BorderLayout());
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 	}
 	
 	public void SetContent(Component comp) {
