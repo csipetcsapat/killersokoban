@@ -66,11 +66,18 @@ public class Main {
 		Map map = new Map();
 		GameManager gm = new GameManager();
 		map.LoadMap(PlayerCount, "test.txt", gm);
-		for (int i = 0; i < PlayerCount; i++) {
+
+		
+		int mapsize = map.GetFields().get(0).size();
+		int SquareSize = 1024/mapsize + 1;
+		int maph = map.GetFields().size();
+		int SquareSize2 = 768/maph + 1;
+		LoadIcons(SquareSize, SquareSize2, ImagePlayerIcons);
+		
+		for (int i = 0; i< PlayerCount; i++) {
 			gm.GetPlayers().get(i).SetGraphic(ImagePlayerIcons.get(i));
 		}
-		
-		
+
 		GameBoard gb = new GameBoard(map);
 	
 		
@@ -81,10 +88,6 @@ public class Main {
 	}
 	public static void main(String[] args) {
 		
-		
-		int SquareSize = 150;
-		
-		LoadIcons(SquareSize, ImagePlayerIcons);
 
 		mw = new MainWindow(1024,  768);
 		
@@ -94,37 +97,37 @@ public class Main {
 	}
 
 
-	private static void LoadIcons(int size, ArrayList<Image> players ) {
+	private static void LoadIcons(int size, int size2, ArrayList<Image> players ) {
 		Image img;
 		
-		img = (new ImageIcon("res/box.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/box.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Box.SetGraphic(img);
-		img = (new ImageIcon("res/closedportal.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/closedportal.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Hole.SetClosedGraphic(img);
-		img = (new ImageIcon("res/portal.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/portal.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Hole.SetOpenGraphic(img);
-		img = (new ImageIcon("res/floor.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/floor.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Field.SetGraphic(img);
-		img = (new ImageIcon("res/goalSauce.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/goalSauce.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Goal.SetGraphic(img);
-		img = (new ImageIcon("res/pgun.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/pgun.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Lever.SetGraphic(img);
-		img = (new ImageIcon("res/wall.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/wall.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		Wall.SetGraphic(img);
 		
 		
-		Image img2 = (new ImageIcon("res/oil.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT);
-		img = (new ImageIcon("res/honey.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		Image img2 = (new ImageIcon("res/oil.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT);
+		img = (new ImageIcon("res/honey.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		
 		Square.setRoughnessImages(img2, img);
 		
-		img = (new ImageIcon("res/rick.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/rick.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		players.add(img);
-		img = (new ImageIcon("res/morty.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 		
+		img = (new ImageIcon("res/morty.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 		
 		players.add(img);
-		img = (new ImageIcon("res/summer.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 
+		img = (new ImageIcon("res/summer.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 
 		players.add(img);
-		img = (new ImageIcon("res/evil.png")).getImage().getScaledInstance(size, size, Image.SCALE_DEFAULT); 
+		img = (new ImageIcon("res/evil.png")).getImage().getScaledInstance(size, size2, Image.SCALE_DEFAULT); 
 		players.add(img);
 	}
 	
