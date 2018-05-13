@@ -23,6 +23,8 @@ public class MainWindow {
 		
 		frame.add(comp, BorderLayout.CENTER);
 		this.comp = comp;
+		frame.revalidate();
+		frame.repaint();
 	}
 	
 	public void Show() {
