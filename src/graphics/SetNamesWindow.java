@@ -14,8 +14,18 @@ import javax.swing.JTextField;
 
 import sokoban.Worker;
 
+/**
+ * A játék elején a nevek lekérdezésért felelős ablak megvalósítása. Megkérdezi a játékosok nevét majd beállítja azokat.
+ * @author Viktor
+ *
+ */
 public class SetNamesWindow {
 	private boolean ok;
+	/**
+	 * Név lekérdező ablak létrehozása, itt kérdezi meg a játékosok neveit majd beállítja azokat.
+	 * @param owner a szülő ablak
+	 * @param players a játékos objektumok akiknek a neveit be kell állítani
+	 */
 	public SetNamesWindow(JFrame owner, ArrayList<Worker> players) {
 		ok = false;
 		

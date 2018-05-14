@@ -8,6 +8,9 @@ Ha láda kerül rá a vonatkozó Hole objektum kinyílik.
 public class Lever extends Field {
     private Hole hole;
     private int ID;
+    /**
+	 * Az objektum ami az adott grafikában grafikusan reprezentálja a kapcsolókat.
+	 * */
     private static Object graphic;
 
     /**
@@ -59,10 +62,18 @@ public class Lever extends Field {
 		
 	}
     
+    /**
+	 * Beállítja az osztályhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
     public static void SetGraphic(Object graphic) {
 		Lever.graphic = graphic;
 	}
 	
+    /**
+	 * Visszaadja az osztályt reprezentáló grafikus objektumot.
+	 * @return a grafikus objektum 
+	 */
 	@Override
 	public Object GetGraphic() {
 		return Lever.graphic;

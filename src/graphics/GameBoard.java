@@ -11,11 +11,25 @@ import sokoban.Directions;
 import sokoban.Field;
 import sokoban.GameManager;
 import sokoban.Map;
-
+/**
+ * A játékteret megvalósító JPanel a mezők egy gridlayoutban vannak elrendezve. 
+ * Itt történik az inputok beolvasása is egy keylistener eseménykezelővel.
+ * @author Viktor
+ *
+ */
 public class GameBoard extends JPanel {
 	static final long serialVersionUID = -1524486995037653542L;
+	/**
+	 * A jelenlegi pálya amit ki kell rajzolni.
+	 */
 	private Map map;
 
+	/**
+	 * Konstruktor létrehozza az ablakot a megfelelő állapotban. 
+	 * Az eseménykezelő beállítása két játékos mozgatásához.
+	 * @param map A pálya amin a játék történik.
+	 * @param gm A gamemanager amin keresztül mozgathatók a játékosok.
+	 */
 	public GameBoard(Map map, GameManager gm) {
 		this.map = map;
 		setFocusable(true);
@@ -70,6 +84,9 @@ public class GameBoard extends JPanel {
 		});
 	}
 	
+	/**
+	 * Frissíti a játéktér állapotát.
+	 */
 	public void Update() {
 		repaint();
 		ArrayList<ArrayList<Field>> fields = map.GetFields();

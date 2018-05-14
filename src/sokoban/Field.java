@@ -3,14 +3,15 @@ package sokoban;
 import graphics.Drawable;
 
 /**A játéktér mezőit reprezentáló osztály.
-Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú “tárgyakat�.
+Ezek nyilvántartják a szomszédjaikat és a rajtuk található Thing osztályú tárgyakat.
+A mező csúszósságát és az objektumot ami az adott grafikában grafikusan reprezentálja a mezőket.
 */
 
 
 public class Field implements Drawable {
     protected Thing thing;
     private Field[] neighbours= new Field[4];
-    protected int roughness;
+    protected int roughness;   
     private static Object graphic;
 
     /**
@@ -81,12 +82,19 @@ public class Field implements Drawable {
     }
     
     
-	
+    /**
+	 * Visszaadja az osztályt reprezentáló grafikus objektumot.
+	 * @return a grafikus objektum 
+	 */
 	@Override
 	public Object GetGraphic() {
 		return graphic;
 	}
-
+	
+	/**
+	 * Beállítja az osztályhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
 	public static void SetGraphic(Object graphic) {
 		Field.graphic = graphic;
 	}

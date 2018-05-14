@@ -6,7 +6,9 @@ Ha tolják akkor arrébb mozdul amennyiben bizonyos feltételek teljesülnek.
 Ha az összes még mozgatható láda a célzónákra kerül a a játék véget ér.
 */
 public class Box extends Thing {
-
+	/**
+	 * Az objektum ami az adott grafikában grafikusan reprezentálja a dobozokat.
+	 * */
 	private static Object graphic;
 	/**
 	 * konstruktor
@@ -97,12 +99,19 @@ public class Box extends Thing {
 		return false;
 	}
 	
-	
+	/**
+	 * Visszaadja az osztályt reprezentáló grafikus objektumot.
+	 * @return a grafikus objektum 
+	 */
 	@Override
 	public Object GetGraphic() {
 		return graphic;
 	}
 	
+	/**
+	 * Beállítja az osztályhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
 	public static void SetGraphic(Object graphic) {
 		Box.graphic = graphic;
 	}

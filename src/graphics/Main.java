@@ -14,13 +14,28 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
+/**
+ * 
+ * @author Viktor
+ *
+ */
 
 public class Main {
+	/**
+	 * Az ablak amiben játszódik a játék.
+	 */
 	private static MainWindow mw;
 	
+	/**
+	 * A grafikus objektumok listája.
+	 */
 	static ArrayList<Image> ImagePlayerIcons = new ArrayList<>();
 	
+	/**
+	 * A megadott kép betöltése
+	 * @param path a megadott útvonal
+	 * @return a betöltött kép
+	 */
 	private static Image loadImage(String path) {
 		Image image = null;
 		try {
@@ -32,6 +47,10 @@ public class Main {
 		return image;
 	}
 	
+	/**
+	 * Menü létrehozása.
+	 * @return Egy Menu objektum.
+	 */
 	private static Menu createMenu() {
 		Menu menu = new Menu();
 		
@@ -60,6 +79,10 @@ public class Main {
 		return menu;
 	}
 
+	/**
+	 * Játéktér létrehozása.
+	 * @return Egy GameBoard objektum.
+	 */
 	private static GameBoard startGame() {
 		int PlayerCount = 2;
 		
@@ -87,10 +110,17 @@ public class Main {
 		
 	}
 	
+	/**
+	 * Visszatérés a főmenübe.
+	 */
 	public static void Reset() {
 		mw.SetContent(createMenu());
 	}
 	
+	/**
+	 * Main függvény ablak létrehozása egy menü megjelenítése.
+	 * @param args Nem használjuk
+	 */
 	public static void main(String[] args) {
 		
 
@@ -101,7 +131,12 @@ public class Main {
 		mw.Show();
 	}
 
-
+	/**
+	 * A grafikus ikonok betöltése.
+	 * @param size A vízszintes méretezésük a pálya méretétől függően.
+	 * @param size2 A függőleges méretezésük a pálya méretétől függően.
+	 * @param players A játékosok listája.
+	 */
 	private static void LoadIcons(int size, int size2, ArrayList<Image> players ) {
 		Image img;
 		

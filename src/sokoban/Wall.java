@@ -6,6 +6,9 @@ package sokoban;
 egy mezőnyi helyet foglal semmi nem tudja megmozdítani.
  */
 public class Wall extends Thing {
+	/**
+	 * Az objektum ami az adott grafikában grafikusan reprezentálja a falakat.
+	 * */
 	private static Object graphic;
 
 	/**
@@ -56,11 +59,19 @@ public class Wall extends Thing {
 		return false;
 	}
 	
+	/**
+	 * Visszaadja az osztályt reprezentáló grafikus objektumot.
+	 * @return a grafikus objektum 
+	 */
 	@Override
 	public Object GetGraphic() {
 		return graphic;
 	}
 	
+	/**
+	 * Beállítja az osztályhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
 	public static void SetGraphic(Object graphic) {
 		Wall.graphic = graphic;
 	}

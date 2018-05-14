@@ -7,6 +7,9 @@ Ha a játék véget ér és ezen a mezőn láda áll akkor azért pont jár
 annak a játékosnak aki idetolta.
 */
 public class Goal extends Field {
+	/**
+	 * Az objektum ami az adott grafikában grafikusan reprezentálja a a célmezőket.
+	 * */
 	private static Object graphic;
 	
     public Goal(GameManager gm) {
@@ -64,10 +67,18 @@ public class Goal extends Field {
 		return s;
 	}
 	
+	/**
+	 * Beállítja az osztályhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
 	public static void SetGraphic(Object graphic) {
 		Goal.graphic = graphic;
 	}
 	
+	 /**
+	 * Visszaadja az osztályt reprezentáló grafikus objektumot.
+	 * @return a grafikus objektum 
+	 */
 	@Override
 	public Object GetGraphic() {
 		return Goal.graphic;

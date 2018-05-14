@@ -166,12 +166,19 @@ public class Worker extends Thing {
 		
 		return true;
 	}
-	
+	/**
+	 * Visszaadja az objektumot reprezentáló grafikus objektumot.
+	 * @return a grafikus objektum 
+	 */
 	@Override
 	public Object GetGraphic() {
 		return graphic;
 	}
 	
+	/**
+	 * Beállítja az objektumhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
 	public void SetGraphic(Object graphic) {
 		this.graphic = graphic;
 	}

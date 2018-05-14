@@ -7,6 +7,9 @@ Ha nem tartozik hozzá kapcsoló mindig nyitva van.
 public class Hole extends Field {
     private boolean open;
     private int ID;
+    /**
+	 * Az objektumok amik az adott grafikában grafikusan reprezentálják a nyitott és a zárt lyukat.
+	 * */
     private static Object graphicO, graphicC;
 
     /**
@@ -66,14 +69,25 @@ public class Hole extends Field {
 		
 	}
     
+    /**
+	 * Beállítja az nyitott lyukhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
     public static void SetOpenGraphic(Object graphic) {
 		Hole.graphicO = graphic;
 	}
     
+    /**
+	 * Beállítja az zárt lyukhoz tartozó grafikus objektumot.
+	 * @param graphic a grafikus objektum amire be akarjuk állítani.
+	 */
     public static void SetClosedGraphic(Object graphic) {
     	Hole.graphicC = graphic;
     }
-	
+    /**
+  	 * Visszaadja a lyuk állapotától függöen a lyukat reprezentáló grafikus objektumot.
+  	 * @return a grafikus objektum 
+  	 */
 	@Override
 	public Object GetGraphic() {
 		

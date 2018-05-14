@@ -8,22 +8,44 @@ import javax.swing.JPanel;
 import sokoban.Field;
 import sokoban.Thing;
 
+/**
+ * Egy mezőt reprezentáló JPanel ezekből épül fel a GameBoard. 
+ * @author Viktor
+ *
+ */
 public class Square extends JPanel {
 	private static final long serialVersionUID = 2718721473398628642L;
+	/**
+	 * Az olajos mezőnek a grafikus objektuma.
+	 */
 	private static Image oilImage;
+	/**
+	 * Az mézes mezőnek a grafikus objektuma.
+	 */
 	private static Image honeyImage;
 	
 	Field field;
-	
+	/**
+	 * Konstruktor lérehozza az adott mezőt reprezentáló mezőt.
+	 * @param f adott mező
+	 */
 	public Square(Field f) {
 		this.field = f;
 	}
 	
+	/**
+	 * Beállítja az olajos és mézes mező grafikus objektumait.
+	 * @param oilImage az olajos mező grafikus objektuma
+	 * @param honeyImage a mézes mező grafikus objektuma
+	 */
 	public static void setRoughnessImages(Image oilImage, Image honeyImage) {
 		Square.oilImage = oilImage;
 		Square.honeyImage = honeyImage;
 	}
-
+	
+	/**
+	 * 
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

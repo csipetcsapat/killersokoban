@@ -10,8 +10,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import sokoban.Worker;
-
+/**
+ * Az eredény kiíró ablak. Ez az ablak felelős azért ,hogy kiírja a végeredményt ha vége a játéknak.
+ * @author Viktor
+ *
+ */
 public class ScoreWindow {
+	/**
+	 * Konstruktor az ablak létrhezosáa az eredményekkel a megadott játékosok segítségével. Az ok gombra kattintással eltűnik.
+	 * @param players a megadott játékosok
+	 */
 	public ScoreWindow(ArrayList<Worker> players) {
 		JFrame frame = new JFrame("Scores");
 		frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
