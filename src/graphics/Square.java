@@ -44,7 +44,7 @@ public class Square extends JPanel {
 	}
 	
 	/**
-	 * 
+	 * Kirajzoló függvény
 	 */
 	@Override
 	public void paintComponent(Graphics g) {

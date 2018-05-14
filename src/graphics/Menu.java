@@ -36,7 +36,7 @@ public class Menu extends JPanel {
 	}
 	
 	/**
-	 * 
+	 * Komponenst add hozzá az ablakhoz.
 	 */
 	@Override
 	public Component add(Component comp) {

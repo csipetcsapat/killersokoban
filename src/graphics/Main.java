@@ -15,7 +15,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 /**
- * 
+ * Itt található a a main függvény. Itt hozzuk létre a főablakot amiben a játék folyik. 
+ * Itt történik a ikonok betöltése és az állapotok létrehozása is.
  * @author Viktor
  *
  */
