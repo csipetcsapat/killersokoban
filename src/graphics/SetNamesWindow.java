@@ -36,9 +36,9 @@ public class SetNamesWindow {
 			}
 		});
 		
-		dialog.add(new JLabel("Player 1 name:"));
+		dialog.add(new JLabel("Player 1 name (Rick):"));
 		dialog.add(textField1);
-		dialog.add(new JLabel("Player 2 name:"));
+		dialog.add(new JLabel("Player 2 name (Morty):"));
 		dialog.add(textField2);
 		dialog.add(okButton);
 		
@@ -47,8 +47,8 @@ public class SetNamesWindow {
 		dialog.setVisible(true);
 		
 		if (!ok) {
-			players.get(0).setName("Unkown 1");
-			players.get(1).setName("Unkown 2");
+			players.get(0).setName("Rick");
+			players.get(1).setName("Morty");
 		} else {
 			players.get(0).setName(textField1.getText());
 			players.get(1).setName(textField2.getText());
