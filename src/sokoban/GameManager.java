@@ -120,12 +120,21 @@ public class GameManager {
 		return false;
 	}
 	
+	private boolean IsBoxOnGoalField(Box box) {
+		if (box.GetField() == null)
+			return true;
+		
+		for (Goal goal : map.GetGoals()) {
+			if (box.GetField() == goal)
+				return true;
+		}
+		
+		return false;
+	}
 	private boolean IsEveryBoxOnGoalField() {
 		for (Box box : boxes) {
-			for (Goal goal : map.GetGoals()) {
-				if (box.GetField() != goal)
-					return false;
-			}
+			if (!IsBoxOnGoalField(box))
+				return false;
 		}
 		
 		if (map.GetGoals().size() == 0)

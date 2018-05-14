@@ -11,6 +11,11 @@ public class Worker extends Thing {
 	private int force;
 	private int ID;
 	private Object graphic;
+	private String name;
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	/**
 	 * konstruktor
@@ -22,6 +27,11 @@ public class Worker extends Thing {
 		this.force = force;
 		this.ID = ID;
 		this.score = 0;
+		this.name = name;
+	}
+	
+	public String GetName() {
+		return name;
 	}
 	
 	public int GetID() {

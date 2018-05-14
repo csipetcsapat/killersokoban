@@ -66,7 +66,7 @@ public class Main {
 		Map map = new Map();
 		GameManager gm = new GameManager();
 		map.LoadMap(PlayerCount, "map.txt", gm);
-
+		new SetNamesWindow(mw.getFrame(), gm.GetPlayers());
 		
 		int mapsize = map.GetFields().get(0).size();
 		int SquareSize = 1024/mapsize + 1;
@@ -86,6 +86,11 @@ public class Main {
 		return gb;
 		
 	}
+	
+	public static void Reset() {
+		mw.SetContent(createMenu());
+	}
+	
 	public static void main(String[] args) {
 		
 

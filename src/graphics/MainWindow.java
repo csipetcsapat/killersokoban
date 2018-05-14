@@ -7,6 +7,11 @@ import javax.swing.JFrame;
 
 public class MainWindow {
 	private JFrame frame;
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+
 	private Component comp = null;
 	
 	public MainWindow(int width, int height) {

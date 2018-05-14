@@ -61,8 +61,10 @@ public class GameBoard extends JPanel {
 				else if (e.getKeyCode() == KeyEvent.VK_CONTROL)
 					gm.GetPlayers().get(1).ReleaseOil();
 				
-				if (gm.CheckEndgame())
-					System.out.println("over");
+				if (gm.CheckEndgame()) {
+					new ScoreWindow(gm.GetPlayers());
+					Main.Reset();
+				}
 				Update();
 			}
 		});
@@ -70,7 +72,6 @@ public class GameBoard extends JPanel {
 	
 	public void Update() {
 		repaint();
-		//map.PrintMap();
 		ArrayList<ArrayList<Field>> fields = map.GetFields();
 		setLayout(new GridLayout(fields.size(), fields.get(0).size()));
 		
