@@ -46,9 +46,13 @@ public class Goal extends Field {
     public void Operate()
     {
     	
-    	scoreOwner = gm.getCurrentPlayer();    	
-    	
-    	scoreOwner.AddScore();
+    	if (scoreOwner != null)
+    		scoreOwner = null;
+    	else {
+	    	scoreOwner = gm.getCurrentPlayer();    	
+	    	
+	    	scoreOwner.AddScore();
+    	}
         
     }
 	public String toString() {
