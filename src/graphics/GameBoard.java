@@ -89,6 +89,8 @@ public class GameBoard extends JPanel {
 	 */
 	public void Update() {
 		repaint();
+		removeAll();
+		revalidate();
 		ArrayList<ArrayList<Field>> fields = map.GetFields();
 		setLayout(new GridLayout(fields.size(), fields.get(0).size()));
 		
